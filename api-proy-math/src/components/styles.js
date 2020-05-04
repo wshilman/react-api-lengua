@@ -1,5 +1,5 @@
 import { makeStyles } from "@material-ui/core/styles";
-import Background from "../Images/background_image.jpg";
+import Background from "../images/background_image.jpg";
 /*
 Archivo de estilos
 */
