@@ -6,9 +6,9 @@ import Avatar from "@material-ui/core/Avatar";
 import Paper from "@material-ui/core/paper";
 import TextField from "@material-ui/core/TextField";
 import CssBaseline from "@material-ui/core/CssBaseline";
-import AvatarImg from "../src/images/logo_monster.png";
-import { Copyright } from "./components/Copyright.jsx";
-import { useStyles } from "./components/styles.js";
+import AvatarImg from "../images/logo_monster.png";
+import { Copyright } from "../components/Copyright.jsx";
+import { useStyles } from "../components/styles.js";
 
 function Task() {
   const classes = useStyles();

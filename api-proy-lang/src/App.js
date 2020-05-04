@@ -1,10 +1,10 @@
 import React from "react";
 import { useStyles } from "./components/styles.js";
-import Login from './Login';
-import SelectTask from './SelectTask';
-import Level from './Level';
-import Task from './Task';
-import Score from './Score';
+import Login from './components/Login.js';
+import Menu from './components/Menu.js';
+import Level from './components/Level.js';
+import Task from './components/Task.js';
+import Score from './components/Score.js';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
 function App() {
@@ -15,10 +15,10 @@ function App() {
     <Router>
       <Switch>
         <Route path="/" exact component={Login}/>
-        <Route path="/SelectTask" component={SelectTask}/>
-        <Route path="/Level" component={Level}/>
-        <Route path="/Task" component={Task}/>
-        <Route path="/Score" component={Score}/>
+        <Route path="/menu" component={Menu}/>
+        <Route path="/level" component={Level}/>
+        <Route path="/task" component={Task}/>
+        <Route path="/score" component={Score}/>
       </Switch>
     </Router>
       
