@@ -57,7 +57,7 @@ function Login() {
               variant="contained"
               color="primary"
               className={classes.submit}
-              component={Link}to="/SelectTask"
+              component={Link}to="/menu"
             >
               Jugar !!
             </Button>

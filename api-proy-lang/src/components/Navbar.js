@@ -7,6 +7,7 @@ import { Avatar } from '@material-ui/core';
 import lightGreen from '@material-ui/core/colors/lightGreen';
 import AvatarImg from "../images/logo_monster.png";
 import Typography from '@material-ui/core/Typography';
+import { pink } from '@material-ui/core/colors';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -21,6 +22,9 @@ const useStyles = makeStyles((theme) => ({
   lightGreen: {
     color: theme.palette.getContrastText(lightGreen[300]),
     backgroundColor: lightGreen[300],
+    '&:hover': {
+      backgroundColor: pink[200],
+    },
   },
   root2: {
     backgroundColor: '#64B5F6',
@@ -42,7 +46,7 @@ export default function ButtonAppBar() {
             <Avatar src={AvatarImg}/>
 
             <Typography align="center" variant="h6" className={classes.title}>
-              <h2> MENÚ </h2>
+              <h2> --- JUEGO --- </h2>
             </Typography>
 
             <Button className={classes.lightGreen}> 

@@ -6,12 +6,19 @@ import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import Background from "../images/background_image.jpg";
-import { Box } from "@material-ui/core";
+import { Box, Button } from "@material-ui/core";
 import Navbar from "../components/Navbar.js";
-
 import { Copyright } from "./Copyright.jsx";
+import {Link} from 'react-router-dom';
+
+
 
 const useStyles = makeStyles((theme) => ({
+  root: {
+    '& > *': {
+      width: '15ch',
+    },
+  },
   heroContent: {
     backgroundColor: theme.palette.background.paper,
     padding: theme.spacing(4, 0, 3),
@@ -60,7 +67,7 @@ export default function Level() {
             {/* carta con información */}
             <Grid item xs={12} sm={6} md={4}>
               <Card className={classes.card} style={{backgroundColor:"#AED581"}}>
-                <h2 style={{textAlign:"center"}}> información extra 1 </h2>
+                <h2 style={{textAlign:"center"}}> Completá las palabras </h2>
                 <p style={{textAlign:"center"}}> El verbo es la parte de la oración o categoría léxica que expresa una acción, movimiento, existencia, 
                   consecución, condición o estado del sujeto. Sintácticamente representa una predicación. 
                   En la oración, el verbo conjugado funciona como el núcleo sintáctico del predicado. </p>
@@ -74,6 +81,7 @@ export default function Level() {
             {/* <Button variant="contained" size="small" color="secondary"> 
               Listo 
             </Button> */}
+
 
 
 
@@ -127,6 +135,11 @@ export default function Level() {
 
             </Card>
             </Grid>
+
+            {/*   BOTÓN PARA VOLVER A MENÚ   */}
+            <Button size='large' variant='contained' color='secondary' component={Link}to="/menu"> 
+              Volver a menú 
+            </Button>
           </Grid>
 
 

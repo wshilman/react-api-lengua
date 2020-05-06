@@ -13,8 +13,10 @@ import Background from "../images/background_image.jpg";
 import { Box } from "@material-ui/core";
 import VerbosImg from "../images/verbos.jpg";
 import Navbar from "../components/Navbar.js";
-
+import {Link} from 'react-router-dom';
 import { Copyright } from "./Copyright.jsx";
+
+
 
 const useStyles = makeStyles((theme) => ({
   appbar: {
@@ -105,8 +107,8 @@ export default function Album() {
                     velit ultrices a. .{" "}
                   </Typography>
                 </CardContent>
-                <CardActions>
-                  <Button size="small" color="primary">
+                <CardActions style={{alignSelf:'center'}}>
+                  <Button size="small" variant='contained' color="secondary" component={Link}to="/level">
                     Jugar
                   </Button>
                 </CardActions>
@@ -129,8 +131,8 @@ export default function Album() {
                     velit ultrices a. .{" "}
                   </Typography>
                 </CardContent>
-                <CardActions>
-                  <Button size="small" color="primary">
+                <CardActions style={{alignSelf:'center'}}>
+                  <Button size="small" variant='contained' color="secondary">
                     Jugar
                   </Button>
                 </CardActions>
@@ -153,8 +155,8 @@ export default function Album() {
                     velit ultrices a. .{" "}
                   </Typography>
                 </CardContent>
-                <CardActions>
-                  <Button size="small" color="primary">
+                <CardActions style={{alignSelf:'center'}}>
+                  <Button size="small" variant='contained' color="secondary">
                     Jugar
                   </Button>
                 </CardActions>
