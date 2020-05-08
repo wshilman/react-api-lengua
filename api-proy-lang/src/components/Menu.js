@@ -12,6 +12,8 @@ import Container from "@material-ui/core/Container";
 import Background from "../images/background_image.jpg";
 import { Box } from "@material-ui/core";
 import VerbosImg from "../images/verbos.jpg";
+import adjetivos from "../images/adjetivos.png";
+import sustantivos from "../images/sustantivos.jpg";
 import Navbar from "../components/Navbar.js";
 import {Link} from 'react-router-dom';
 import { Copyright } from "./Copyright.jsx";
@@ -116,7 +118,7 @@ function Menu() {
               <Card className={classes.card}>
                 <CardMedia
                   className={classes.cardMedia}
-                  image="https://source.unsplash.com/random"
+                  image={adjetivos}
                   title="Image title"
                 />
                 <CardContent className={classes.cardContent}>
@@ -140,7 +142,7 @@ function Menu() {
               <Card className={classes.card}>
                 <CardMedia
                   className={classes.cardMedia}
-                  image="https://source.unsplash.com/random"
+                  image={sustantivos}
                   title="Image title"
                 />
                 <CardContent className={classes.cardContent}>

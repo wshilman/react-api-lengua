@@ -29,9 +29,6 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     flexDirection: "column",
   },
-  cardMedia: {
-    paddingTop: "56.25%", // 16:9
-  },
   footer: {
     backgroundColor: theme.palette.background.paper,
     padding: theme.spacing(6),
@@ -39,9 +36,9 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const Level = () => {
-
   const classes = useStyles();
 
+  const [open, setOpen] = React.useState(false);
   const [answer, setAnswer] = useState("Validar");
 
   const [correct1, setCorrect1] = useState(false);
@@ -72,13 +69,11 @@ const Level = () => {
       case 6:
         setCorrect6(!correct6);
         break;
-    
       default:
         break;
     }
-  
   };
-  
+
   const solve = () => {
     if((correct1 && correct2 && correct3 && correct4 && correct5 && correct6)===true) {
       setAnswer("Sos un experto!");
@@ -87,6 +82,7 @@ const Level = () => {
       setAnswer("Te quivocaste campeon");
     }
   };
+
 
 
   return (
@@ -98,11 +94,11 @@ const Level = () => {
         <div className={classes.heroContent}>
           <Container maxWidth="sm">
             <Typography
-              component="h3"
+              component="h2"
               variant="h3"
               align="center"
             >
-              VERBOS!
+              NIVEL 1
             </Typography>
           </Container>
         </div>
@@ -115,14 +111,14 @@ const Level = () => {
             <Grid item xs={12} sm={6} md={4}>
               <Card className={classes.card} style={{backgroundColor:"#AED581"}}>
                 <h2 style={{textAlign:"center"}}> Identificá las acciones </h2>
-                <p style={{textAlign:"center", margin:"0"}}> El verbo es la parte de la oración o categoría léxica que expresa una acción, movimiento, existencia, 
-                  consecución, condición o estado del sujeto. Sintácticamente representa una predicación. 
+                <p style={{textAlign:"center", margin:"0"}}> A tu derecha tenés seis imágenes de personas haciendo alguna acción. 
+                Identificalas y hacé click en las que vos pensas que son kecsho arreglate..... alguien que redacte esto mejor... 
                 </p>
               </Card>
             </Grid>
             {/* carta con el juego */}
             <Grid item xs={12} sm={6} md={8}>
-              <Card className={classes.card} style={{backgroundColor:"#64B5F6"}}>
+              <Card className={classes.card} style={{backgroundColor:"#FFCC80"}}>
                 <Grid container justify="center" alignItems="stretch">
                   <Grid item xs={12} sm={12} md={6} style={{backgroundColor:"orange"}}> 
                     <ul style={{listStyle:"none", padding:"0", margin:"0", display:"flex", justifyContent:"space-around"}}>
@@ -137,7 +133,7 @@ const Level = () => {
                       <li><img src={require("../images/esquiar.png")} alt="esquiar"/></li>
                     </ul>
                   </Grid>
-                  <Grid item xs={12} sm={12} md={6} style={{backgroundColor:"#FFCC80"}}> 
+                  <Grid item xs={12} sm={12} md={6}> 
                     <ul style={{listStyle:"none", padding:"0", margin:"0", display:"flex", justifyContent:"space-around"}}>
                       <li><FormControlLabel control={<Checkbox />} label="hablar"  /></li>
                       <li><FormControlLabel control={<Checkbox />} label="estudiar" /></li>
@@ -165,21 +161,24 @@ const Level = () => {
               </Card>
             </Grid>
 
-            {/*   BOTÓN PARA VOLVER A MENÚ   */}
-            <Button size='large' variant='contained' color='secondary' component={Link}to="/menu"> 
-              Volver a menú 
-            </Button>
-            <Button size='large' variant='contained' color='secondary' onClick={solve}> 
-              {answer} 
-            </Button>
-            <Button size='large' variant='contained' color='secondary'> 
-              Siguiente 
-            </Button>
+            <Grid item xs={12} sm={12} md={12}>
+              <ul style={{listStyle:"none", padding:"0", margin:"0", display:"flex", justifyContent:"space-between"}}>
+                <li><Button size='large' variant='contained' color='secondary' component={Link}to="/menu"> 
+                  Volver 
+                </Button></li>
+
+                <li><Button size='large' variant='contained' color='secondary' onClick={solve}> 
+                  {answer} 
+                </Button></li>
+                
+                <li><Button size='large' variant='contained' color='secondary' component={Link}to="/level2"> 
+                  Siguiente 
+                </Button></li>
+              </ul>
+            </Grid>
+
+
           </Grid>
-
-
-
-
         </Container>
       </main>
 
