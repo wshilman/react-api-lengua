@@ -52,7 +52,7 @@ function Login() {
             />
 
             <Button
-              type="Ingresar"
+              type="submit"
               fullWidth
               variant="contained"
               color="primary"

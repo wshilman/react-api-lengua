@@ -1,72 +1,78 @@
-import React from "react";
-import { Box } from "@material-ui/core";
-import { Grid } from "@material-ui/core";
-import Button from "@material-ui/core/Button";
-import Avatar from "@material-ui/core/Avatar";
-import Paper from "@material-ui/core/paper";
-import TextField from "@material-ui/core/TextField";
+import React, {useState} from "react";
 import CssBaseline from "@material-ui/core/CssBaseline";
-import AvatarImg from "../images/logo_monster.png";
-import { Copyright } from "../components/Copyright.jsx";
-import { useStyles } from "../components/styles.js";
+import Grid from "@material-ui/core/Grid";
+import Typography from "@material-ui/core/Typography";
+import { makeStyles } from "@material-ui/core/styles";
+import Container from "@material-ui/core/Container";
+import { Box, Button } from "@material-ui/core";
+import Navbar from "../components/Navbar.js";
+import { Copyright } from "./Copyright.jsx";
 
-function Task() {
+const useStyles = makeStyles((theme) => ({
+  
+}));
+
+const Task = props => {
+
+  const [buttonState, setButtonState] = useState(false);
+
   const classes = useStyles();
 
+  const handleClick = () => {
+    setButtonState(true);
+  };
+
   return (
-    <Grid container component="main" className={classes.root}>
-      <CssBaseline />
-      <Grid item xs={false} sm={4} md={7} className={classes.image} />
-      <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
-        <div className={classes.paper}>
-          <Avatar
-            alt="avatar_monster"
-            src={AvatarImg}
-            className={classes.avatar}
-          />
+    <React.Fragment>
+    <CssBaseline />
+    <Navbar />
+    <main>
+      {/* Hero unit */}
+      <div className={classes.heroContent}>
+        <Container maxWidth="sm">
+          <Typography
+            component="h3"
+            variant="h3"
+            align="center"
+            color="textPrimary"
+            gutterBottom
+          >
+            Completar las palabras
+          </Typography>
+        </Container>
+      </div>
+      {/* End hero unit */}
+      <Container className={classes.cardGrid}>
+        <Grid container spacing={4}>
+          <Grid item xs={12} sm={6} md={4}>
+           
 
-          <form className={classes.form} noValidate>
-            <TextField
-              variant="outlined"
-              margin="normal"
-              required
-              fullWidth
-              id="Nombre"
-              label="Nombre"
-              name="Nombre"
-              autoComplete="Nombre"
-              autoFocus
-            />
-
-            <TextField
-              variant="outlined"
-              margin="normal"
-              required
-              fullWidth
-              name="Apellido"
-              label="Apellido"
-              type="Apellido"
-              id="Apellido"
-              autoComplete="Apellido"
-            />
-
-            <Button
-              type="Ingresar"
+           <Button
+              type="button"
               fullWidth
               variant="contained"
               color="primary"
-              className={classes.submit}
+              disabled={buttonState}
+              onClick={handleClick}
             >
-              Jugar !!
+              Error
             </Button>
-
-            <Box mt={5}>
-              <Copyright />
-            </Box>
-          </form>
-        </div>
-      </Grid>
-    </Grid>
+           
+              
+          
+                
+              
+            
+          </Grid>
+        </Grid>
+      </Container>
+    </main>
+    {/* Footer */}
+    <Box mt={5}>
+      <Copyright />
+    </Box>
+    {/* End footer */}
+  </React.Fragment>
   );
 }
 

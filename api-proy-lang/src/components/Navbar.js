@@ -46,7 +46,7 @@ export default function ButtonAppBar() {
             <Avatar src={AvatarImg}/>
 
             <Typography align="center" variant="h6" className={classes.title}>
-              <h2> --- JUEGO --- </h2>
+               --- JUEGO --- 
             </Typography>
 
             <Button className={classes.lightGreen}> 

@@ -16,8 +16,6 @@ import Navbar from "../components/Navbar.js";
 import {Link} from 'react-router-dom';
 import { Copyright } from "./Copyright.jsx";
 
-
-
 const useStyles = makeStyles((theme) => ({
   appbar: {
     backgroundColor: theme.palette.secondary.main,
@@ -65,7 +63,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Album() {
+function Menu() {
   const classes = useStyles();
 
   return (
@@ -173,3 +171,5 @@ export default function Album() {
     </React.Fragment>
   );
 }
+
+export default Menu;
