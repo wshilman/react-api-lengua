@@ -38,7 +38,6 @@ const useStyles = makeStyles((theme) => ({
 const Level = () => {
   const classes = useStyles();
 
-  const [open, setOpen] = React.useState(false);
   const [answer, setAnswer] = useState("Validar");
 
   const [correct1, setCorrect1] = useState(false);

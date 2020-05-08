@@ -40,11 +40,42 @@ const useStyles = makeStyles((theme) => ({
 const Level2 = () => {
   const classes = useStyles();
 
-  const [value, setValue] = React.useState();
+  const [answer, setAnswer] = useState("Validar");
 
-  const handleChange = (event) => {
-    setValue(event.target.value);
+  const [correct1, setCorrect1] = useState(false);
+  const [correct2, setCorrect2] = useState(false);
+  const [correct3, setCorrect3] = useState(false);
+  const [correct4, setCorrect4] = useState(false);
+
+  const clickHandler = num => {
+
+    switch (num) {
+      case 1:
+        setCorrect1(!correct1);
+        break;
+      case 2:
+        setCorrect2(!correct2);
+        break;
+      case 3:
+        setCorrect3(!correct3);
+        break;
+      case 4:
+        setCorrect4(!correct4);
+        break;
+      default:
+        break;
+    }
   };
+
+  const solve = () => {
+    if((correct1 && correct2 && correct3 && correct4)===true) {
+      setAnswer("Sos un experto!");
+    }
+    else{
+      setAnswer("Te quivocaste campeon");
+    }
+  };
+
 
   return (
     <React.Fragment>
@@ -82,33 +113,33 @@ const Level2 = () => {
               <Card className={classes.card} style={{backgroundColor:"#FFA726"}}>
                 <Grid container justify="center" alignItems="stretch">
                   <Grid item xs={12} sm={12} md={12}> 
-                    <RadioGroup aria-label="food" name="food1" value={value} onChange={handleChange}>
+                    <RadioGroup aria-label="food" name="food1" >
                         <ul style={{listStyle:"none", padding:"0", margin:"0", display:"flex", justifyContent:"space-between"}}>
                             <li><FormControlLabel value="anvorguesa" control={<Radio />} label="anvorguesa"  /></li>
-                            <li><FormControlLabel value="hamburguesa" control={<Radio />} label="hamburguesa"  /></li>
+                            <li><FormControlLabel value="hamburguesa" control={<Radio onClick={clickHandler.bind(this, 1)}/>} label="hamburguesa"  /></li>
                             <li><FormControlLabel value="hamburgüesa" control={<Radio />} label="hamburgüesa"  /></li>
                         </ul>
                     </RadioGroup>
-                    <RadioGroup aria-label="talk" name="talk1" value={value} onChange={handleChange}>
+                    <RadioGroup aria-label="talk" name="talk1" >
                         <ul style={{listStyle:"none", padding:"0", margin:"0", display:"flex", justifyContent:"space-between"}}>
                             <li><FormControlLabel value="havlar" control={<Radio />} label="havlar"  /></li>
                             <li><FormControlLabel value="ablar" control={<Radio />} label="ablar"  /></li>
-                            <li><FormControlLabel value="hablar" control={<Radio />} label="hablar"  /></li>
+                            <li><FormControlLabel value="hablar" control={<Radio onClick={clickHandler.bind(this, 2)}/>} label="hablar"  /></li>
                             <li><FormControlLabel value="hablár" control={<Radio />} label="hablár"  /></li>
                             <li><FormControlLabel value="avlar" control={<Radio />} label="avlar"  /></li>
                         </ul>
                     </RadioGroup>
-                    <RadioGroup aria-label="science" name="science1" value={value} onChange={handleChange}>
+                    <RadioGroup aria-label="science" name="science1" >
                         <ul style={{listStyle:"none", padding:"0", margin:"0", display:"flex", justifyContent:"space-between"}}>
                             <li><FormControlLabel value="ciéncia" control={<Radio />} label="ciéncia"  /></li>
                             <li><FormControlLabel value="ciensia" control={<Radio />} label="ciensia"  /></li>
                             <li><FormControlLabel value="sciéncia" control={<Radio />} label="sciéncia"  /></li>
-                            <li><FormControlLabel value="ciencia" control={<Radio />} label="ciencia"  /></li>
+                            <li><FormControlLabel value="ciencia" control={<Radio onClick={clickHandler.bind(this, 3)}/>} label="ciencia"  /></li>
                         </ul>
                     </RadioGroup>
-                    <RadioGroup aria-label="fast" name="fast1" value={value} onChange={handleChange}>
+                    <RadioGroup aria-label="fast" name="fast1">
                         <ul style={{listStyle:"none", padding:"0", margin:"0", display:"flex", justifyContent:"space-between"}}>
-                            <li><FormControlLabel value="velocidad" control={<Radio />} label="velocidad"  /></li>
+                            <li><FormControlLabel value="velocidad" control={<Radio onClick={clickHandler.bind(this, 4)} />} label="velocidad"  /></li>
                             <li><FormControlLabel value="belocidad" control={<Radio />} label="belocidad"  /></li>
                             <li><FormControlLabel value="velosidad" control={<Radio />} label="velosidad"  /></li>
                             <li><FormControlLabel value="velocidád" control={<Radio />} label="velocidád"  /></li>
@@ -126,8 +157,8 @@ const Level2 = () => {
                   Volver 
                 </Button></li>
 
-                <li><Button size='large' variant='contained' color='secondary' > 
-                  ANSWER
+                <li><Button size='large' variant='contained' color='secondary' onClick={solve} > 
+                  {answer}
                 </Button></li>
                 
                 <li><Button size='large' variant='contained' color='secondary' component={Link}to="/level3"> 
