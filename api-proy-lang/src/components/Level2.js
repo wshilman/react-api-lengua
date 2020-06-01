@@ -18,7 +18,7 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 const useStyles = makeStyles((theme) => ({
   heroContent: {
     backgroundColor: theme.palette.background.paper,
-    padding: theme.spacing(4, 0, 3),
+    padding: theme.spacing(10, 0, 3),
   },
   cardGrid: {
     paddingTop: theme.spacing(8),

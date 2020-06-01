@@ -38,70 +38,13 @@ const useStyles = makeStyles((theme) => ({
 const Level = () => {
   const classes = useStyles();
 
-  const [answer, setAnswer] = useState("Validar");
-
-  const [correct1, setCorrect1] = useState(false);
-  const [correct2, setCorrect2] = useState(false);
-  const [correct3, setCorrect3] = useState(false);
-  const [correct4, setCorrect4] = useState(false);
-  const [correct5, setCorrect5] = useState(false);
-  const [correct6, setCorrect6] = useState(false);
-
-  const clickHandler = num => {
-
-    switch (num) {
-      case 1:
-        setCorrect1(!correct1);
-        break;
-      case 2:
-        setCorrect2(!correct2);
-        break;
-      case 3:
-        setCorrect3(!correct3);
-        break;
-      case 4:
-        setCorrect4(!correct4);
-        break;
-      case 5:
-        setCorrect5(!correct5);
-        break;
-      case 6:
-        setCorrect6(!correct6);
-        break;
-      default:
-        break;
-    }
-  };
-
-  const solve = () => {
-    if((correct1 && correct2 && correct3 && correct4 && correct5 && correct6)===true) {
-      setAnswer("Sos un experto!");
-    }
-    else{
-      setAnswer("Te quivocaste campeon");
-    }
-  };
-
 
 
   return (
     <React.Fragment>
       <CssBaseline />
-      <Navbar />
       <main>
-        {/* Hero unit */}
-        <div className={classes.heroContent}>
-          <Container maxWidth="sm">
-            <Typography
-              component="h2"
-              variant="h3"
-              align="center"
-            >
-              NIVEL 1
-            </Typography>
-          </Container>
-        </div>
-        {/* End hero unit */}
+       
         <Container className={classes.cardGrid}>
           
           {/* NIVEL 3 */}
@@ -118,7 +61,7 @@ const Level = () => {
             {/* carta con el juego */}
             <Grid item xs={12} sm={6} md={8}>
               <Card className={classes.card} style={{backgroundColor:"#FFCC80"}}>
-                <Grid container justify="center" alignItems="stretch">
+                {/*<Grid container justify="center" alignItems="stretch">*/}
                   <Grid item xs={12} sm={12} md={6} style={{backgroundColor:"orange"}}> 
                     <ul style={{listStyle:"none", padding:"0", margin:"0", display:"flex", justifyContent:"space-around"}}>
                       <li><img src={require("../images/remar.png")} alt="remar" /></li>
@@ -133,31 +76,35 @@ const Level = () => {
                     </ul>
                   </Grid>
                   <Grid item xs={12} sm={12} md={6}> 
+                  <form>
+                    
                     <ul style={{listStyle:"none", padding:"0", margin:"0", display:"flex", justifyContent:"space-around"}}>
                       <li><FormControlLabel control={<Checkbox />} label="hablar"  /></li>
                       <li><FormControlLabel control={<Checkbox />} label="estudiar" /></li>
-                      <li><FormControlLabel control={<Checkbox onClick={clickHandler.bind(this, 1)} />} label="nadar" /></li>
+                      <li><FormControlLabel control={<Checkbox />} label="nadar" /></li>
                     </ul>
                     <ul style={{listStyle:"none", padding:"0", margin:"0", display:"flex", justifyContent:"space-around"}}>
-                      <li><FormControlLabel control={<Checkbox onClick={clickHandler.bind(this, 2)} />} label="saludar" /></li>
-                      <li><FormControlLabel control={<Checkbox onClick={clickHandler.bind(this, 3)} />} label="remar" /></li>
+                      <li><FormControlLabel control={<Checkbox />} label="saludar" /></li>
+                      <li><FormControlLabel control={<Checkbox />} label="remar" /></li>
                       <li><FormControlLabel control={<Checkbox />} label="cocinar" /></li>
                     </ul>
                     <ul style={{listStyle:"none", padding:"0", margin:"0", display:"flex", justifyContent:"space-around"}}>
                       <li><FormControlLabel control={<Checkbox />} label="construir" /></li>
-                      <li><FormControlLabel control={<Checkbox onClick={clickHandler.bind(this, 4)} />} label="esquiar" /></li>
+                      <li><FormControlLabel control={<Checkbox />} label="esquiar" /></li>
                       <li><FormControlLabel control={<Checkbox />} label="codificar" /></li>
-                    </ul>
-                    <ul style={{listStyle:"none", padding:"0", margin:"0", display:"flex", justifyContent:"space-around"}}>
-                      <li><FormControlLabel control={<Checkbox onClick={clickHandler.bind(this, 5)} />} label="trepar" /></li>
+                    
+                    
+                      <li><FormControlLabel value control={<Checkbox />} label="trepar" /></li>
                       <li><FormControlLabel control={<Checkbox />} label="dormir" /></li>
-                      <li><FormControlLabel control={<Checkbox onClick={clickHandler.bind(this, 6)} />} label="correr" /></li>
+                      <li><FormControlLabel control={<Checkbox />} label="correr" /></li>
                     </ul>
+                    </form>
 
                   </Grid>
-                </Grid>
+                
 
               </Card>
+            
             </Grid>
 
             <Grid item xs={12} sm={12} md={12}>
@@ -166,8 +113,8 @@ const Level = () => {
                   Volver 
                 </Button></li>
 
-                <li><Button size='large' variant='contained' color='secondary' onClick={solve}> 
-                  {answer} 
+                <li><Button size='large' variant='contained' color='secondary'> 
+                  Answer 
                 </Button></li>
                 
                 <li><Button size='large' variant='contained' color='secondary' component={Link}to="/level2"> 
@@ -180,7 +127,6 @@ const Level = () => {
           </Grid>
         </Container>
       </main>
-
 
       {/* Footer */}
       <Box mt={5}>

@@ -9,7 +9,7 @@ import CssBaseline from "@material-ui/core/CssBaseline";
 import AvatarImg from "../images/logo_monster.png";
 import { Copyright } from "../components/Copyright.jsx";
 import { useStyles } from "../components/styles.js";
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 function Login() {
   const classes = useStyles();

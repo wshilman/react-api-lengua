@@ -41,19 +41,19 @@ export default function ButtonAppBar() {
 
   return (
     <div className={classes.root}>
-      <AppBar position="static">
-        <Toolbar width="100%" classes={{root: classes.root2}}> 
+      
+        <Toolbar width="100%" classes={{root: classes.root2}} align='center'> 
             <Avatar src={AvatarImg}/>
 
-            <Typography align="center" variant="h6" className={classes.title}>
-               --- JUEGO --- 
+            <Typography variant="h6" className={classes.title}>
+              --- JUEGO --- 
             </Typography>
 
             <Button className={classes.lightGreen}> 
               PUNTOS?? 
             </Button>
         </Toolbar>
-      </AppBar>
+      
     </div>
   );
 }
