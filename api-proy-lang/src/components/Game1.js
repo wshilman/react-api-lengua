@@ -92,6 +92,8 @@ const Game1 = () => {
     
   }
 
+
+
   return (
 
     <Fragment>
