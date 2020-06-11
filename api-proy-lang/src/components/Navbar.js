@@ -7,6 +7,7 @@ import lightGreen from '@material-ui/core/colors/lightGreen';
 import AvatarImg from "../images/logo_monster.png";
 import Typography from '@material-ui/core/Typography';
 import { pink } from '@material-ui/core/colors';
+import {Link} from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -48,7 +49,7 @@ export default function ButtonAppBar() {
               --- JUEGO --- 
             </Typography>
 
-            <Button className={classes.lightGreen}> 
+            <Button className={classes.lightGreen} component={Link}to="/score"> 
               PUNTOS?? 
             </Button>
         </Toolbar>

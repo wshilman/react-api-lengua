@@ -15,7 +15,7 @@ const Hero = ({textLine}) => {
 
   return(
 
-    <header>
+    <header style={{padding:"10px"}}>
 
       <Typography className={classes.heroContent} variant="h3" align="center">
         {textLine}

@@ -7,9 +7,7 @@ import CardMedia from "@material-ui/core/CardMedia";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
-import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
-import Background from "../images/background_image.jpg";
 import { Box } from "@material-ui/core";
 import VerbosImg from "../images/verbos.jpg";
 import adjetivos from "../images/adjetivos.png";
@@ -17,55 +15,10 @@ import sustantivos from "../images/sustantivos.jpg";
 import Navbar from "../components/Navbar.js";
 import {Link} from 'react-router-dom';
 import { Copyright } from "./Copyright.jsx";
-
-const useStyles = makeStyles((theme) => ({
-  appbar: {
-    backgroundColor: theme.palette.secondary.main,
-  },
-  icon: {
-    marginRight: theme.spacing(2),
-  },
-  heroContent: {
-    backgroundColor: theme.palette.background.paper,
-    padding: theme.spacing(4, 0, 3),
-  },
-  heroButtons: {
-    marginTop: theme.spacing(4),
-  },
-  cardGrid: {
-    paddingTop: theme.spacing(8),
-    paddingBottom: theme.spacing(8),
-    backgroundImage: "url(" + Background + ") ",
-  },
-  card: {
-    height: "100%",
-    display: "flex",
-    flexDirection: "column",
-  },
-  cardMedia: {
-    paddingTop: "56.25%", // 16:9
-    height: 100,
-    maxWidth: "100%",
-  },
-  cardContent: {
-    flexGrow: 1,
-  },
-  footer: {
-    backgroundColor: theme.palette.background.paper,
-    padding: theme.spacing(6),
-  },
-  image: {
-    backgroundImage: "url(" + Background + ") ",
-    backgroundColor:
-      theme.palette.type === "light"
-        ? theme.palette.grey[50]
-        : theme.palette.grey[900],
-    backgroundSize: "cover",
-    backgroundPosition: "center",
-  },
-}));
+import { useStyles } from "./styles.js";
 
 function Menu() {
+  //TODOS LOS ESTILOS ESTÁN ACÁ...
   const classes = useStyles();
 
   return (
@@ -108,7 +61,7 @@ function Menu() {
                   </Typography>
                 </CardContent>
                 <CardActions style={{alignSelf:'center'}}>
-                  <Button size="small" variant='contained' color="secondary" component={Link}to="/level">
+                  <Button size="small" variant='contained' color="secondary" component={Link}to="/game1">
                     Jugar
                   </Button>
                 </CardActions>
@@ -132,7 +85,7 @@ function Menu() {
                   </Typography>
                 </CardContent>
                 <CardActions style={{alignSelf:'center'}}>
-                  <Button size="small" variant='contained' color="secondary">
+                  <Button size="small" variant='contained' color="secondary" component={Link}to="/leveladj">
                     Jugar
                   </Button>
                 </CardActions>

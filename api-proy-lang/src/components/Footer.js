@@ -20,6 +20,7 @@ const Footer = () => {
 
     <footer className={classes.footer}>
         <Copyright />
+        <br />
     </footer>
 
   );

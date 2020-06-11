@@ -1,43 +1,21 @@
-import React, {useState} from "react";
+import React, { useState, Fragment } from "react";
 import Card from "@material-ui/core/Card";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Grid from "@material-ui/core/Grid";
-import Typography from "@material-ui/core/Typography";
-import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
-import Background from "../images/background_image.jpg";
-import { Box, Button } from "@material-ui/core";
+import { Button } from "@material-ui/core";
 import Navbar from "../components/Navbar.js";
-import { Copyright } from "./Copyright.jsx";
-import {Link} from 'react-router-dom';
+import Hero from './Hero';
+import Footer from './Footer';
+import { Link } from 'react-router-dom';
 import Radio from '@material-ui/core/Radio';
 import RadioGroup from '@material-ui/core/RadioGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
-
-
-const useStyles = makeStyles((theme) => ({
-  heroContent: {
-    backgroundColor: theme.palette.background.paper,
-    padding: theme.spacing(10, 0, 3),
-  },
-  cardGrid: {
-    paddingTop: theme.spacing(8),
-    paddingBottom: theme.spacing(8),
-    backgroundImage: "url(" + Background + ") ",
-  },
-  card: {
-    height: "100%",
-    display: "flex",
-    flexDirection: "column",
-  },
-  footer: {
-    backgroundColor: theme.palette.background.paper,
-    padding: theme.spacing(6),
-  },
-}));
+import { useStyles } from "./styles.js";
 
 
 const Level2 = () => {
+  //TODOS LOS ESTILOS ESTÁN ACÁ...
   const classes = useStyles();
 
   const [answer, setAnswer] = useState("Validar");
@@ -69,6 +47,7 @@ const Level2 = () => {
 
   const solve = () => {
     if((correct1 && correct2 && correct3 && correct4)===true) {
+      
       setAnswer("Sos un experto!");
     }
     else{
@@ -78,26 +57,16 @@ const Level2 = () => {
 
 
   return (
-    <React.Fragment>
+    <Fragment>
       <CssBaseline />
       <Navbar />
+      
       <main>
-        {/* Hero unit */}
-        <div className={classes.heroContent}>
-          <Container maxWidth="sm">
-            <Typography
-              component="h2"
-              variant="h3"
-              align="center"
-            >
-              NIVEL 2
-            </Typography>
-          </Container>
-        </div>
-        {/* End hero unit */}
+
+        <Hero textLine='Nivel 2' />
+        <br />
+
         <Container className={classes.cardGrid}>
-          
-          {/* NIVEL 3 */}
           <Grid container justify="center" spacing={4}>
             {/* carta con información */}
             <Grid item xs={12} sm={6} md={4}>
@@ -151,35 +120,28 @@ const Level2 = () => {
               </Card>
             </Grid>
 
-            <Grid item xs={12} sm={12} md={12}>
-              <ul style={{listStyle:"none", padding:"0", margin:"0", display:"flex", justifyContent:"space-between"}}>
-                <li><Button size='large' variant='contained' color='secondary' component={Link}to="/menu"> 
-                  Volver 
-                </Button></li>
+            <Grid item xs={12} sm={12} md={12} className={classes.navButtons}>
+              <Button size='large' variant='contained' color='secondary' component={Link}to="/menu"> 
+                Volver 
+              </Button>
 
-                <li><Button size='large' variant='contained' color='secondary' onClick={solve} > 
-                  {answer}
-                </Button></li>
-                
-                <li><Button size='large' variant='contained' color='secondary' component={Link}to="/level3"> 
-                  Siguiente 
-                </Button></li>
-              </ul>
+              <Button size='large' variant='contained' color='secondary' onClick={solve} > 
+                {answer}
+              </Button>
+              
+              <Button size='large' variant='contained' color='secondary' component={Link}to="/level3"> 
+                Siguiente 
+              </Button>
             </Grid>
 
 
           </Grid>
         </Container>
       </main>
+      
+      <Footer />
 
-
-      {/* Footer */}
-      <Box mt={5}>
-        <Copyright />
-      </Box>
-      <br />
-      {/* End footer */}
-    </React.Fragment>
+    </Fragment>
   );
 }
 

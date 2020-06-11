@@ -61,7 +61,7 @@ const Level = () => {
             {/* carta con el juego */}
             <Grid item xs={12} sm={6} md={8}>
               <Card className={classes.card} style={{backgroundColor:"#FFCC80"}}>
-                {/*<Grid container justify="center" alignItems="stretch">*/}
+                <Grid container justify="center" alignItems="stretch">
                   <Grid item xs={12} sm={12} md={6} style={{backgroundColor:"orange"}}> 
                     <ul style={{listStyle:"none", padding:"0", margin:"0", display:"flex", justifyContent:"space-around"}}>
                       <li><img src={require("../images/remar.png")} alt="remar" /></li>
@@ -92,8 +92,8 @@ const Level = () => {
                       <li><FormControlLabel control={<Checkbox />} label="construir" /></li>
                       <li><FormControlLabel control={<Checkbox />} label="esquiar" /></li>
                       <li><FormControlLabel control={<Checkbox />} label="codificar" /></li>
-                    
-                    
+                    </ul>
+                    <ul style={{listStyle:"none", padding:"0", margin:"0", display:"flex", justifyContent:"space-around"}}>
                       <li><FormControlLabel value control={<Checkbox />} label="trepar" /></li>
                       <li><FormControlLabel control={<Checkbox />} label="dormir" /></li>
                       <li><FormControlLabel control={<Checkbox />} label="correr" /></li>
@@ -101,7 +101,7 @@ const Level = () => {
                     </form>
 
                   </Grid>
-                
+                </Grid>
 
               </Card>
             
