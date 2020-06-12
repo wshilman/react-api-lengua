@@ -13,7 +13,7 @@ import VerbosImg from "../images/verbos.jpg";
 import adjetivos from "../images/adjetivos.png";
 import sustantivos from "../images/sustantivos.jpg";
 import Navbar from "../components/Navbar.js";
-import {Link} from 'react-router-dom';
+import { Link } from "react-router-dom";
 import { Copyright } from "./Copyright.jsx";
 import { useStyles } from "./styles.js";
 
@@ -55,13 +55,22 @@ function Menu() {
                     Verbos
                   </Typography>
                   <Typography>
-                    Los verbos son: Lorem ipsum dolor sit amet, consectetur
-                    adipiscing elit. Ut sodales molestie tellus, eget euismod
-                    velit ultrices a. .{" "}
+                    Los verbos son palabras que expresan la acción que ejecuta
+                    el sujeto, o el estado o proceso en el que se encuentra. Por
+                    ello, siempre concuerdan con el sujeto en persona y número.
+                    Los verbos son el núcleo del predicado. Además, pueden ir
+                    acompañados de complementos que añadan información sobre
+                    cómo ocurre la acción o qué elementos involucra.{" "}
                   </Typography>
                 </CardContent>
-                <CardActions style={{alignSelf:'center'}}>
-                  <Button size="small" variant='contained' color="secondary" component={Link}to="/game1">
+                <CardActions style={{ alignSelf: "center" }}>
+                  <Button
+                    size="small"
+                    variant="contained"
+                    color="secondary"
+                    component={Link}
+                    to="/game1"
+                  >
                     Jugar
                   </Button>
                 </CardActions>
@@ -84,8 +93,14 @@ function Menu() {
                     velit ultrices a. .{" "}
                   </Typography>
                 </CardContent>
-                <CardActions style={{alignSelf:'center'}}>
-                  <Button size="small" variant='contained' color="secondary" component={Link}to="/leveladj">
+                <CardActions style={{ alignSelf: "center" }}>
+                  <Button
+                    size="small"
+                    variant="contained"
+                    color="secondary"
+                    component={Link}
+                    to="/leveladj"
+                  >
                     Jugar
                   </Button>
                 </CardActions>
@@ -108,8 +123,8 @@ function Menu() {
                     velit ultrices a. .{" "}
                   </Typography>
                 </CardContent>
-                <CardActions style={{alignSelf:'center'}}>
-                  <Button size="small" variant='contained' color="secondary">
+                <CardActions style={{ alignSelf: "center" }}>
+                  <Button size="small" variant="contained" color="secondary">
                     Jugar
                   </Button>
                 </CardActions>

@@ -1,13 +1,13 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import Toolbar from '@material-ui/core/Toolbar';
-import Button from '@material-ui/core/Button';
-import { Avatar } from '@material-ui/core';
-import lightGreen from '@material-ui/core/colors/lightGreen';
+import React from "react";
+import { makeStyles } from "@material-ui/core/styles";
+import Toolbar from "@material-ui/core/Toolbar";
+import Button from "@material-ui/core/Button";
+import { Avatar } from "@material-ui/core";
+import lightGreen from "@material-ui/core/colors/lightGreen";
 import AvatarImg from "../images/logo_monster.png";
-import Typography from '@material-ui/core/Typography';
-import { pink } from '@material-ui/core/colors';
-import {Link} from 'react-router-dom';
+import Typography from "@material-ui/core/Typography";
+import { pink } from "@material-ui/core/colors";
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -22,17 +22,17 @@ const useStyles = makeStyles((theme) => ({
   lightGreen: {
     color: theme.palette.getContrastText(lightGreen[300]),
     backgroundColor: lightGreen[300],
-    '&:hover': {
+    "&:hover": {
       backgroundColor: pink[200],
     },
   },
   root2: {
-    backgroundColor: '#64B5F6',
+    backgroundColor: "#64B5F6",
     borderRadius: 3,
     border: 0,
-    color: 'white',
+    color: "white",
     height: 48,
-    padding: '0 30px',
+    padding: "0 30px",
   },
 }));
 
@@ -41,19 +41,17 @@ export default function ButtonAppBar() {
 
   return (
     <div className={classes.root}>
-      
-        <Toolbar width="100%" classes={{root: classes.root2}} align='center'> 
-            <Avatar src={AvatarImg}/>
+      <Toolbar width="100%" classes={{ root: classes.root2 }} align="center">
+        <Avatar src={AvatarImg} />
 
-            <Typography variant="h6" className={classes.title}>
-              --- JUEGO --- 
-            </Typography>
+        <Typography variant="h6" className={classes.title}>
+          --- Apalabrando ! ---
+        </Typography>
 
-            <Button className={classes.lightGreen} component={Link}to="/score"> 
-              PUNTOS?? 
-            </Button>
-        </Toolbar>
-      
+        <Button className={classes.lightGreen} component={Link} to="/score">
+          PUNTOS??
+        </Button>
+      </Toolbar>
     </div>
   );
 }
