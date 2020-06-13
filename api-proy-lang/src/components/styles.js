@@ -14,6 +14,9 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: "column",
     alignItems: "center",
   },
+  radioLeft: {
+    textalign: "left",
+  },
   avatar: {
     height: "50%",
     width: "50%",
@@ -22,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
   },
   heroContent: {
     backgroundColor: theme.palette.background.paper,
-    padding: theme.spacing(4, 0, 3) 
+    padding: theme.spacing(4, 0, 3),
   },
   form: {
     width: "100%", // Fix IE 11 issue.
@@ -72,38 +75,34 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(6),
   },
 
-
-  mainGrid:{
-    paddingTop: '80px',
-    paddingBottom: '80px',
+  mainGrid: {
+    paddingTop: "80px",
+    paddingBottom: "80px",
     backgroundImage: "url(" + Background + ") ",
-    height:'100%'
+    height: "100%",
   },
-  navButtons:{
-    display: 'flex',
-    justifyContent:'space-around',
-    marginTop:'40px'
+  navButtons: {
+    display: "flex",
+    justifyContent: "space-around",
+    marginTop: "40px",
   },
-  textCard:{
-    backgroundColor:'#AED581',
-    height:'100%',
-    textAlign:'center'
+  textCard: {
+    backgroundColor: "#AED581",
+    height: "100%",
+    textAlign: "center",
   },
-  choicesCard:{
-    backgroundColor:'#FFA726',
-    borderRadius:'4px',
-    justifyContent:'center',
-    boxShadow: '0px 2px 1px -1px rgba(0,0,0,0.2), 0px 1px 1px 0px rgba(0,0,0,0.14), 0px 1px 3px 0px rgba(0,0,0,0.12)'
+  choicesCard: {
+    backgroundColor: "#FFA726",
+    borderRadius: "4px",
+    justifyContent: "center",
+    boxShadow:
+      "0px 2px 1px -1px rgba(0,0,0,0.2), 0px 1px 1px 0px rgba(0,0,0,0.14), 0px 1px 3px 0px rgba(0,0,0,0.12)",
   },
-  imgCard:{
-    backgroundColor:'white',
-    display: 'flex',
-    justifyContent:'space-around',
+  imgCard: {
+    backgroundColor: "white",
+    display: "flex",
+    justifyContent: "space-around",
   },
-
-
-  
-
 }));
 
 export { useStyles };
