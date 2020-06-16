@@ -36,6 +36,12 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+//console.log("Session Storage: " + sessionStorage.getItem("SesStorNombre"));
+
+const nombreFromSession = sessionStorage.getItem("SesStorNombre");
+const apellidoFromSession = sessionStorage.getItem("SesStorApellido");
+const puntajeFromSession = sessionStorage.getItem("SesStorPuntaje");
+
 export default function ButtonAppBar() {
   const classes = useStyles();
 
@@ -43,13 +49,15 @@ export default function ButtonAppBar() {
     <div className={classes.root}>
       <Toolbar width="100%" classes={{ root: classes.root2 }} align="center">
         <Avatar src={AvatarImg} />
-
+        <div>{apellidoFromSession}</div>
+        <div>-</div>
+        <div>{nombreFromSession}</div>
         <Typography variant="h6" className={classes.title}>
           --- Apalabrando ! ---
         </Typography>
-
         <Button className={classes.lightGreen} component={Link} to="/score">
-          PUNTOS??
+          PUNTOS:
+          <div>{puntajeFromSession}</div>
         </Button>
       </Toolbar>
     </div>

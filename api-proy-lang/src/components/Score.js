@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import Card from "@material-ui/core/Card";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Grid from "@material-ui/core/Grid";
@@ -9,9 +9,9 @@ import Background from "../images/background_image.jpg";
 import { Box, Button } from "@material-ui/core";
 import Navbar from "../components/Navbar.js";
 import { Copyright } from "./Copyright.jsx";
-import { Link } from 'react-router-dom';
-import { red, lightGreen } from '@material-ui/core/colors';
-import Footer from './Footer';
+import { Link } from "react-router-dom";
+import { red, lightGreen } from "@material-ui/core/colors";
+import Footer from "./Footer";
 
 const useStyles = makeStyles((theme) => ({
   heroContent: {
@@ -35,63 +35,46 @@ const useStyles = makeStyles((theme) => ({
   lightGreen: {
     color: theme.palette.getContrastText(lightGreen[500]),
     backgroundColor: lightGreen[500],
-    '&:hover': {
+    "&:hover": {
       backgroundColor: lightGreen[700],
     },
   },
   red: {
     color: theme.palette.getContrastText(red[600]),
     backgroundColor: red[600],
-    '&:hover': {
+    "&:hover": {
       backgroundColor: red[800],
     },
   },
 }));
 
-
 function Score() {
   const classes = useStyles();
-  
+
   return (
     <React.Fragment>
-    <CssBaseline />
-    <Navbar />
-    <main>
-      {/* Hero unit */}
-      <div className={classes.heroContent}>
-        <Container maxWidth="sm">
-          <Typography
-            component="h2"
-            variant="h3"
-            align="center"
-          >
-            NIVEL 3
-          </Typography>
-        </Container>
-      </div>
-      {/* End hero unit */}
-      <Container className={classes.cardGrid}>
-        
-        {/* NIVEL 3 */}
-        <Grid container justify="center" spacing={4}>
-        
-          <Grid item xs={12} sm={6} md={8}>
-           
+      <CssBaseline />
+      <Navbar />
+      <main>
+        {/* Hero unit */}
+        <div className={classes.heroContent}>
+          <Container maxWidth="sm">
+            <Typography component="h2" variant="h3" align="center">
+              NIVEL 3
+            </Typography>
+          </Container>
+        </div>
+        {/* End hero unit */}
+        <Container className={classes.cardGrid}>
+          {/* NIVEL 3 */}
+          <Grid container justify="center" spacing={4}>
+            <Grid item xs={12} sm={6} md={8}></Grid>
           </Grid>
+        </Container>
+      </main>
 
-
-        </Grid>
-      </Container>
-    </main>
-
-    <Footer />
-    
-  </React.Fragment>
-
-
-
-
-
+      <Footer />
+    </React.Fragment>
   );
 }
 

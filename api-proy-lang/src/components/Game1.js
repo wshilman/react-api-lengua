@@ -1,7 +1,6 @@
 import React, { Fragment } from "react";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import FormHelperText from "@material-ui/core/FormHelperText";
-import FormLabel from "@material-ui/core/FormLabel";
 import Checkbox from "@material-ui/core/Checkbox";
 import { Button, Card } from "@material-ui/core";
 import Hero from "./Hero";

@@ -9,10 +9,26 @@ import CssBaseline from "@material-ui/core/CssBaseline";
 import AvatarImg from "../images/logo_monster.png";
 import { Copyright } from "../components/Copyright.jsx";
 import { useStyles } from "../components/styles.js";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 function Login() {
   const classes = useStyles();
+
+  const handleChange = (event) => {
+    setState({ ...state, [event.target.name]: event.target.value });
+  };
+
+  const [state, setState] = React.useState({
+    stateNombre: "",
+    stateApellido: "",
+  });
+
+  //var str = $("#Nombre").val();npm
+  // Save data to sessionStorage
+  sessionStorage.setItem("SesStorNombre", state.stateNombre);
+  sessionStorage.setItem("SesStorApellido", state.stateApellido);
+  sessionStorage.setItem("SesStorPuntaje", "0");
+  //alert(str);
 
   return (
     <Grid container component="main" className={classes.root}>
@@ -34,9 +50,11 @@ function Login() {
               fullWidth
               id="Nombre"
               label="Nombre"
-              name="Nombre"
+              name="stateNombre"
               autoComplete="Nombre"
               autoFocus
+              value={state.stateNombre}
+              onChange={handleChange}
             />
 
             <TextField
@@ -44,11 +62,13 @@ function Login() {
               margin="normal"
               required
               fullWidth
-              name="Apellido"
+              name="stateApellido"
               label="Apellido"
               type="Apellido"
               id="Apellido"
               autoComplete="Apellido"
+              value={state.stateApellido}
+              onChange={handleChange}
             />
 
             <Button
@@ -57,7 +77,8 @@ function Login() {
               variant="contained"
               color="primary"
               className={classes.submit}
-              component={Link}to="/menu"
+              component={Link}
+              to="/menu"
             >
               Jugar !!
             </Button>
