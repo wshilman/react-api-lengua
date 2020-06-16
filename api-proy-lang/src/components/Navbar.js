@@ -36,14 +36,12 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-//console.log("Session Storage: " + sessionStorage.getItem("SesStorNombre"));
-
-const nombreFromSession = sessionStorage.getItem("SesStorNombre");
-const apellidoFromSession = sessionStorage.getItem("SesStorApellido");
-const puntajeFromSession = sessionStorage.getItem("SesStorPuntaje");
-
 export default function ButtonAppBar() {
   const classes = useStyles();
+
+  const nombreFromSession = sessionStorage.getItem("SesStorNombre");
+  const apellidoFromSession = sessionStorage.getItem("SesStorApellido");
+  const puntajeFromSession = sessionStorage.getItem("SesStorPuntaje");
 
   return (
     <div className={classes.root}>
