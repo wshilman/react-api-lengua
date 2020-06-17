@@ -83,7 +83,7 @@ const Level2 = () => {
             <Grid item xs={12} sm={6} md={8}>
               <Card
                 className={classes.card}
-                style={{ backgroundColor: "#FFA726" }}
+                style={{ backgroundColor: "#FFCC80" }}
               >
                 <Grid container justify="center" alignItems="stretch">
                   <Grid item xs={12} sm={12} md={12}>
@@ -94,7 +94,7 @@ const Level2 = () => {
                           padding: "0",
                           margin: "0",
                           display: "flex",
-                          justifyContent: "space-between",
+                          justifyContent: "space-around",
                         }}
                       >
                         <li>
@@ -102,13 +102,6 @@ const Level2 = () => {
                             value="anvorguesa"
                             control={<Radio />}
                             label="anvorguesa"
-                          />
-                        </li>
-                        <li>
-                          <FormControlLabel
-                            value="anburgoso"
-                            control={<Radio />}
-                            label="anburgoso"
                           />
                         </li>
                         <li>
@@ -136,7 +129,7 @@ const Level2 = () => {
                           padding: "0",
                           margin: "0",
                           display: "flex",
-                          justifyContent: "space-between",
+                          justifyContent: "space-around",
                         }}
                       >
                         <li>
@@ -178,7 +171,7 @@ const Level2 = () => {
                           padding: "0",
                           margin: "0",
                           display: "flex",
-                          justifyContent: "space-between",
+                          justifyContent: "space-around",
                         }}
                       >
                         <li>
@@ -220,7 +213,7 @@ const Level2 = () => {
                           padding: "0",
                           margin: "0",
                           display: "flex",
-                          justifyContent: "space-between",
+                          justifyContent: "space-around",
                         }}
                       >
                         <li>
@@ -284,8 +277,7 @@ const Level2 = () => {
                 size="large"
                 variant="contained"
                 color="secondary"
-                component={Link}
-                to="/level3"
+                
               >
                 Siguiente
               </Button>

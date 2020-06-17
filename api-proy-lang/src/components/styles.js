@@ -1,5 +1,7 @@
 import { makeStyles } from "@material-ui/core/styles";
 import Background from "../images/background_image.jpg";
+import { pink, lightGreen } from '@material-ui/core/colors';
+
 /*
 Archivo de estilos
 */
@@ -103,6 +105,49 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     justifyContent: "space-around",
   },
+  root3: {
+    flexGrow: 1,
+  },
+  menuButton: {
+    marginRight: theme.spacing(2),
+  },
+  title: {
+    flexGrow: 1,
+  },
+  pinkhover: {
+    height: "100%",
+    color: theme.palette.getContrastText(lightGreen[300]),
+    backgroundColor: pink[200],
+    "&:hover": {
+      backgroundColor: lightGreen[300],
+    },
+  },
+  root2: {
+    backgroundColor: "#64B5F6",
+    borderRadius: 3,
+    border: 0,
+    color: "white",
+    height: 48,
+    padding: "0 30px",
+  },
+  words: {
+    padding: ".2rem",
+    display: "inline-block",
+    fontWeight: "bold",
+    backgroundColor: "#ff9900",
+    borderRadius: "5px",
+    '&:hover': {
+      backgroundColor: pink[300],
+    }
+  },
+  listas: {
+    listStyle: "none", 
+    padding: "0", 
+    margin: "0", 
+    display: "flex", 
+    justifyContent: "space-around",
+  }
+
 }));
 
 export { useStyles };

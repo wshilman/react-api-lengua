@@ -6,35 +6,9 @@ import { Avatar } from "@material-ui/core";
 import lightGreen from "@material-ui/core/colors/lightGreen";
 import AvatarImg from "../images/logo_monster.png";
 import Typography from "@material-ui/core/Typography";
-import { pink } from "@material-ui/core/colors";
 import { Link } from "react-router-dom";
+import { useStyles } from "./styles.js";
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    flexGrow: 1,
-  },
-  menuButton: {
-    marginRight: theme.spacing(2),
-  },
-  title: {
-    flexGrow: 1,
-  },
-  lightGreen: {
-    color: theme.palette.getContrastText(lightGreen[300]),
-    backgroundColor: lightGreen[300],
-    "&:hover": {
-      backgroundColor: pink[200],
-    },
-  },
-  root2: {
-    backgroundColor: "#64B5F6",
-    borderRadius: 3,
-    border: 0,
-    color: "white",
-    height: 48,
-    padding: "0 30px",
-  },
-}));
 
 export default function ButtonAppBar() {
   const classes = useStyles();
@@ -44,18 +18,20 @@ export default function ButtonAppBar() {
   const puntajeFromSession = sessionStorage.getItem("SesStorPuntaje");
 
   return (
-    <div className={classes.root}>
+    <div className={classes.root3}>
       <Toolbar width="100%" classes={{ root: classes.root2 }} align="center">
         <Avatar src={AvatarImg} />
         <div>{apellidoFromSession}</div>
         <div>-</div>
         <div>{nombreFromSession}</div>
         <Typography variant="h6" className={classes.title}>
-          --- Apalabrando ! ---
+          Apalabrando ! 
         </Typography>
-        <Button className={classes.lightGreen} component={Link} to="/score">
-          PUNTOS:
-          <div>{puntajeFromSession}</div>
+        <Button className={classes.pinkhover} component={Link} to="/score">
+          <p style={{color:"white", fontWeight:"bold"}}> 
+            PUNTOS: 
+          </p>
+          <div style={{fontWeight:"bold"}}> {puntajeFromSession} </div>
         </Button>
       </Toolbar>
     </div>

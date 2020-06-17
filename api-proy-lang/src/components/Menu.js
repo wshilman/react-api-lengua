@@ -36,7 +36,7 @@ function Menu() {
               color="textPrimary"
               gutterBottom
             >
-              ¿Que trivia queres jugar?
+              ¿Qué trivia queres jugar?
             </Typography>
           </Container>
         </div>
@@ -99,7 +99,7 @@ function Menu() {
                     variant="contained"
                     color="secondary"
                     component={Link}
-                    to="/leveladj"
+                    to="/level1adj"
                   >
                     Jugar
                   </Button>
