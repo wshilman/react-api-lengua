@@ -16,6 +16,8 @@ const Game1 = () => {
   //TODOS LOS ESTILOS ESTÁN ACÁ...
   const classes = useStyles();
 
+  var start = Date.now();
+
   const [answer, setAnswer] = React.useState("Validar");
 
   const [state, setState] = React.useState({
@@ -31,6 +33,7 @@ const Game1 = () => {
     checkedJ: false,
     checkedK: false,
     checkedL: false,
+    game01End: false,
   });
 
   const handleChange = (event) => {
@@ -60,6 +63,10 @@ const Game1 = () => {
       document.getElementById("right5").style.backgroundColor = "#8BC34A";
       document.getElementById("right6").style.backgroundColor = "#8BC34A";
       setAnswer("Correcto!");
+      sessionStorage.setItem(
+        "SesStorPuntaje",
+        Math.trunc(100 - Math.floor((Date.now() - start) / 1000))
+      );
     } else {
       setAnswer("Incorrecto");
     }
