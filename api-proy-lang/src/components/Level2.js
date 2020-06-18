@@ -17,12 +17,16 @@ const Level2 = () => {
   //TODOS LOS ESTILOS ESTÁN ACÁ...
   const classes = useStyles();
 
+  var start = Date.now();
+  var points = sessionStorage.getItem("SesStorPuntaje");
+
   const [answer, setAnswer] = useState("Validar");
 
   const [correct1, setCorrect1] = useState(false);
   const [correct2, setCorrect2] = useState(false);
   const [correct3, setCorrect3] = useState(false);
   const [correct4, setCorrect4] = useState(false);
+  const [flagEndGame, setFlagEndGame] = useState(false);
 
   const clickHandler = (num) => {
     switch (num) {
@@ -46,6 +50,19 @@ const Level2 = () => {
   const solve = () => {
     if ((correct1 && correct2 && correct3 && correct4) === true) {
       setAnswer("Sos un experto!");
+
+      if (flagEndGame === false) {
+        /*Sumamos los puntos actuales de la session mas los nuevos */
+        points =
+          parseInt(points) +
+          Math.trunc(100 - Math.floor((Date.now() - start) / 1000));
+
+        /*Asignamos los puntos calculados a la session*/
+        sessionStorage.setItem("SesStorPuntaje", points);
+
+        /*cambiamos el estado para que no sume muchas veces al apretar "Validar" */
+        setFlagEndGame(!flagEndGame);
+      }
     } else {
       setAnswer("Te quivocaste campeon");
     }
@@ -273,12 +290,7 @@ const Level2 = () => {
                 {answer}
               </Button>
 
-              <Button
-                size="large"
-                variant="contained"
-                color="secondary"
-                
-              >
+              <Button size="large" variant="contained" color="secondary">
                 Siguiente
               </Button>
             </Grid>
