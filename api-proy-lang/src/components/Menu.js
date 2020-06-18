@@ -88,9 +88,9 @@ function Menu() {
                     Adjetivos
                   </Typography>
                   <Typography>
-                    Los Adjetivos son: Lorem ipsum dolor sit amet, consectetur
-                    adipiscing elit. Ut sodales molestie tellus, eget euismod
-                    velit ultrices a. .{" "}
+                    Los adjetivos son las palabras que complementan al
+                    sustantivo, lo acompañan y proporcionan información de éste,
+                    como sus propiedades y características.{" "}
                   </Typography>
                 </CardContent>
                 <CardActions style={{ alignSelf: "center" }}>
