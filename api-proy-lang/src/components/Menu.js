@@ -115,7 +115,7 @@ function Menu() {
                 />
                 <CardContent className={classes.cardContent}>
                   <Typography gutterBottom variant="h5" component="h2">
-                    Sustantivos
+                    Comprensión Lectora
                   </Typography>
                   <Typography>
                     Los Sustantivos son: Lorem ipsum dolor sit amet, consectetur
@@ -124,7 +124,13 @@ function Menu() {
                   </Typography>
                 </CardContent>
                 <CardActions style={{ alignSelf: "center" }}>
-                  <Button size="small" variant="contained" color="secondary">
+                  <Button
+                    size="small"
+                    variant="contained"
+                    color="secondary"
+                    component={Link}
+                    to="/Lvl1CL"
+                  >
                     Jugar
                   </Button>
                 </CardActions>
