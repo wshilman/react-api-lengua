@@ -1,6 +1,5 @@
 import React, { Fragment } from "react";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
-import FormHelperText from "@material-ui/core/FormHelperText";
 import Checkbox from "@material-ui/core/Checkbox";
 import { Button, Card } from "@material-ui/core";
 import Hero from "./Hero";
@@ -82,26 +81,30 @@ const Lvl1CL = () => {
       <CssBaseline />
       <Navbar />
 
-      <main>
+      <main style={{backgroundColor:"#ccffff"}}>
         <Hero textLine="Nivel 1 - Comprensión Lectora" />
         <br />
 
         <Container className={classes.mainGrid}>
-          <Grid container justify="center" spacing={4}></Grid>
-
-          <Card className={classes.card} style={{ backgroundColor: "#AED581" }}>
-            <h2 style={{ textAlign: "center" }}> Comprensión Lectora </h2>
-            <p style={{ textAlign: "center", margin: "0" }}>
-              Lee la siguiente historia y responde la preguntas de abajo.
-              <p></p>
-            </p>
-            <p style={{ textAlign: "center", margin: "0" }}>¿ Te Animas ?</p>
+          <Card className={classes.card}>
+            <Grid container style={{backgroundColor:"#AED581", justifyContent:"space-around"}}>
+              <img src={require("../images/doge1total.jpg")} height="90" width="90" style={{margin:"15px"}}/>
+              <div style={{width:"90%"}}>
+                <h2 style={{textAlign:"center"}}> Comprensión Lectora </h2>
+                <p style={{textAlign:"center", margin:"0"}}>
+                  Lee la siguiente historia y responde la preguntas de abajo.
+                  <br />
+                </p>
+                <p style={{textAlign:"center", margin:"0"}}>¿ Te Animás ?</p>
+                <br />
+              </div>
+            </Grid>
           </Card>
 
-          <p></p>
+          <br />
 
-          <Card className={classes.card}>
-            <Typography variant="h5">
+          <Card className={classes.card} style={{backgroundColor:"#C5E1A5"}}>
+            <Typography variant="h5" style={{textAlign:"justify", margin:"8px"}}>
               Todo perro ofrece a su amo comprensión y aprecio; sin embargo, el
               animal puede también memorizar algunos comportamientos
               específicos. Porque el perro desea quedar bien con su amo,
@@ -119,11 +122,11 @@ const Lvl1CL = () => {
 
           <p></p>
 
-          <Card className={classes.card} style={{ backgroundColor: "#C51162" }}>
-            <Typography variant="h6" className={classes.title}>
+          <Card className={classes.card} style={{ backgroundColor: "#FFCC80" }}>
+            <Typography variant="h6" className={classes.title} style={{paddingLeft: "8px"}}>
               ¿Que es lo incorrecto del texto?
             </Typography>
-            <List>
+            <List style={{paddingLeft: "8px"}}>
               <Typography>
                 1) El perro puede aprender todo conocimiento que su amo le
                 ofrezca.
@@ -141,19 +144,11 @@ const Lvl1CL = () => {
 
           <Card
             className={classes.card}
-            style={{ backgroundColor: " #AED581" }}
+            style={{ backgroundColor:"#FFF59D" }}
           >
             <Grid item xs={12} sm={12} md={6}>
               <form>
-                <ul
-                  style={{
-                    listStyle: "none",
-                    padding: "0",
-                    margin: "0",
-                    display: "flex",
-                    justifyContent: "left",
-                  }}
-                >
+                <ul className={classes.listas} style={{justifyContent:"left", paddingLeft:"8px"}}>
                   <li>
                     <FormControlLabel
                       control={
@@ -167,15 +162,7 @@ const Lvl1CL = () => {
                     />
                   </li>
                 </ul>
-                <ul
-                  style={{
-                    listStyle: "none",
-                    padding: "0",
-                    margin: "0",
-                    display: "flex",
-                    justifyContent: "left",
-                  }}
-                >
+                <ul className={classes.listas} style={{justifyContent:"left", paddingLeft:"8px"}}>
                   <li id="right2">
                     <FormControlLabel
                       control={
@@ -189,15 +176,7 @@ const Lvl1CL = () => {
                     />
                   </li>
                 </ul>
-                <ul
-                  style={{
-                    listStyle: "none",
-                    padding: "0",
-                    margin: "0",
-                    display: "flex",
-                    justifyContent: "left",
-                  }}
-                >
+                <ul className={classes.listas} style={{justifyContent:"left", paddingLeft:"8px"}}>
                   <li>
                     <FormControlLabel
                       control={
@@ -211,15 +190,7 @@ const Lvl1CL = () => {
                     />
                   </li>
                 </ul>
-                <ul
-                  style={{
-                    listStyle: "none",
-                    padding: "0",
-                    margin: "0",
-                    display: "flex",
-                    justifyContent: "left",
-                  }}
-                >
+                <ul className={classes.listas} style={{justifyContent:"left", paddingLeft:"8px"}}>
                   <li id="right5">
                     <FormControlLabel
                       control={
@@ -233,15 +204,7 @@ const Lvl1CL = () => {
                     />
                   </li>
                 </ul>
-                <ul
-                  style={{
-                    listStyle: "none",
-                    padding: "0",
-                    margin: "0",
-                    display: "flex",
-                    justifyContent: "left",
-                  }}
-                >
+                <ul className={classes.listas} style={{justifyContent:"left", paddingLeft:"8px"}}>
                   <li id="right5">
                     <FormControlLabel
                       control={

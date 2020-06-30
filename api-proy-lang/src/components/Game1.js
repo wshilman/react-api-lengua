@@ -77,7 +77,7 @@ const Game1 = () => {
       <CssBaseline />
       <Navbar />
 
-      <main>
+      <main style={{backgroundColor:"#ccffff"}}>
         <Hero textLine="Nivel 1" />
         <br />
 
@@ -95,7 +95,6 @@ const Game1 = () => {
                 </h2>
                 <p style={{ textAlign: "center", margin: "0" }}>
                   Identificalas las imagenes y marca las acciones.
-                  <p></p>
                 </p>
                 <p style={{ textAlign: "center", margin: "0" }}>
                   ¿ Te Animas ?
@@ -116,15 +115,7 @@ const Game1 = () => {
                     md={6}
                     style={{ backgroundColor: "orange" }}
                   >
-                    <ul
-                      style={{
-                        listStyle: "none",
-                        padding: "0",
-                        margin: "0",
-                        display: "flex",
-                        justifyContent: "space-around",
-                      }}
-                    >
+                    <ul className={classes.listas}>
                       <li>
                         <img src={require("../images/remar.png")} alt="remar" />
                       </li>
@@ -144,15 +135,7 @@ const Game1 = () => {
                       </li>
                     </ul>
                     <br />
-                    <ul
-                      style={{
-                        listStyle: "none",
-                        padding: "0",
-                        margin: "0",
-                        display: "flex",
-                        justifyContent: "space-around",
-                      }}
-                    >
+                    <ul className={classes.listas}>
                       <li>
                         <img
                           src={require("../images/saludar.png")}
@@ -172,15 +155,7 @@ const Game1 = () => {
                   </Grid>
                   <Grid item xs={12} sm={12} md={6}>
                     <form>
-                      <ul
-                        style={{
-                          listStyle: "none",
-                          padding: "0",
-                          margin: "0",
-                          display: "flex",
-                          justifyContent: "space-around",
-                        }}
-                      >
+                      <ul className={classes.listas}>
                         <li>
                           <FormControlLabel
                             control={
@@ -218,15 +193,7 @@ const Game1 = () => {
                           />
                         </li>
                       </ul>
-                      <ul
-                        style={{
-                          listStyle: "none",
-                          padding: "0",
-                          margin: "0",
-                          display: "flex",
-                          justifyContent: "space-around",
-                        }}
-                      >
+                      <ul className={classes.listas}>
                         <li id="right2">
                           <FormControlLabel
                             control={
@@ -264,15 +231,7 @@ const Game1 = () => {
                           />
                         </li>
                       </ul>
-                      <ul
-                        style={{
-                          listStyle: "none",
-                          padding: "0",
-                          margin: "0",
-                          display: "flex",
-                          justifyContent: "space-around",
-                        }}
-                      >
+                      <ul className={classes.listas}>
                         <li>
                           <FormControlLabel
                             control={
@@ -310,15 +269,7 @@ const Game1 = () => {
                           />
                         </li>
                       </ul>
-                      <ul
-                        style={{
-                          listStyle: "none",
-                          padding: "0",
-                          margin: "0",
-                          display: "flex",
-                          justifyContent: "space-around",
-                        }}
-                      >
+                      <ul className={classes.listas}>
                         <li id="right5">
                           <FormControlLabel
                             control={

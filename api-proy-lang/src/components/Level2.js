@@ -73,7 +73,7 @@ const Level2 = () => {
       <CssBaseline />
       <Navbar />
 
-      <main>
+      <main style={{backgroundColor:"#ccffff"}}>
         <Hero textLine="Nivel 2" />
         <br />
 
@@ -105,15 +105,7 @@ const Level2 = () => {
                 <Grid container justify="center" alignItems="stretch">
                   <Grid item xs={12} sm={12} md={12}>
                     <RadioGroup aria-label="food" name="food1">
-                      <ul
-                        style={{
-                          listStyle: "none",
-                          padding: "0",
-                          margin: "0",
-                          display: "flex",
-                          justifyContent: "space-around",
-                        }}
-                      >
+                      <ul className={classes.listas}>
                         <li>
                           <FormControlLabel
                             value="anvorguesa"
@@ -140,15 +132,7 @@ const Level2 = () => {
                       </ul>
                     </RadioGroup>
                     <RadioGroup aria-label="talk" name="talk1">
-                      <ul
-                        style={{
-                          listStyle: "none",
-                          padding: "0",
-                          margin: "0",
-                          display: "flex",
-                          justifyContent: "space-around",
-                        }}
-                      >
+                      <ul className={classes.listas}>
                         <li>
                           <FormControlLabel
                             value="havlar"
@@ -182,15 +166,7 @@ const Level2 = () => {
                       </ul>
                     </RadioGroup>
                     <RadioGroup aria-label="science" name="science1">
-                      <ul
-                        style={{
-                          listStyle: "none",
-                          padding: "0",
-                          margin: "0",
-                          display: "flex",
-                          justifyContent: "space-around",
-                        }}
-                      >
+                      <ul className={classes.listas}>
                         <li>
                           <FormControlLabel
                             value="ciéncia"
@@ -224,15 +200,7 @@ const Level2 = () => {
                       </ul>
                     </RadioGroup>
                     <RadioGroup aria-label="fast" name="fast1">
-                      <ul
-                        style={{
-                          listStyle: "none",
-                          padding: "0",
-                          margin: "0",
-                          display: "flex",
-                          justifyContent: "space-around",
-                        }}
-                      >
+                      <ul className={classes.listas}>
                         <li>
                           <FormControlLabel
                             value="velocidad"

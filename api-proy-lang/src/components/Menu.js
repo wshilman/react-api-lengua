@@ -8,14 +8,15 @@ import CssBaseline from "@material-ui/core/CssBaseline";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import Container from "@material-ui/core/Container";
-import { Box } from "@material-ui/core";
 import VerbosImg from "../images/verbos.jpg";
 import adjetivos from "../images/adjetivos.png";
 import sustantivos from "../images/sustantivos.jpg";
 import Navbar from "../components/Navbar.js";
 import { Link } from "react-router-dom";
-import { Copyright } from "./Copyright.jsx";
 import { useStyles } from "./styles.js";
+import Footer from './Footer';
+import Hero from './Hero';
+
 
 function Menu() {
   //TODOS LOS ESTILOS ESTÁN ACÁ...
@@ -25,22 +26,12 @@ function Menu() {
     <React.Fragment>
       <CssBaseline />
       <Navbar />
-      <main>
-        {/* Hero unit */}
-        <div className={classes.heroContent}>
-          <Container maxWidth="sm">
-            <Typography
-              component="h3"
-              variant="h3"
-              align="center"
-              color="textPrimary"
-              gutterBottom
-            >
-              ¿Qué trivia queres jugar?
-            </Typography>
-          </Container>
-        </div>
-        {/* End hero unit */}
+      
+      <main style={{backgroundColor:"#ccffff"}}>
+        
+        <Hero textLine='Qué querés jugar?' />
+        <br />
+        
         <Container className={classes.cardGrid}>
           <Grid container spacing={4}>
             <Grid item xs={12} sm={6} md={4}>
@@ -51,7 +42,7 @@ function Menu() {
                   title="Image title"
                 />
                 <CardContent className={classes.cardContent}>
-                  <Typography gutterBottom variant="h5" component="h2">
+                  <Typography gutterBottom variant="h5" component="h2" style={{textAlign:"center", backgroundColor:"#FFD54F"}}>
                     Verbos
                   </Typography>
                   <Typography>
@@ -60,7 +51,7 @@ function Menu() {
                     ello, siempre concuerdan con el sujeto en persona y número.
                     Los verbos son el núcleo del predicado. Además, pueden ir
                     acompañados de complementos que añadan información sobre
-                    cómo ocurre la acción o qué elementos involucra.{" "}
+                    cómo ocurre la acción o qué elementos involucra.
                   </Typography>
                 </CardContent>
                 <CardActions style={{ alignSelf: "center" }}>
@@ -84,7 +75,7 @@ function Menu() {
                   title="Image title"
                 />
                 <CardContent className={classes.cardContent}>
-                  <Typography gutterBottom variant="h5" component="h2">
+                  <Typography gutterBottom variant="h5" component="h2" style={{textAlign:"center", backgroundColor:"#FFD54F"}}>
                     Adjetivos
                   </Typography>
                   <Typography>
@@ -114,7 +105,7 @@ function Menu() {
                   title="Image title"
                 />
                 <CardContent className={classes.cardContent}>
-                  <Typography gutterBottom variant="h5" component="h2">
+                  <Typography gutterBottom variant="h5" component="h2" style={{textAlign:"center", backgroundColor:"#FFD54F"}}>
                     Comprensión Lectora
                   </Typography>
                   <Typography>
@@ -138,12 +129,10 @@ function Menu() {
             </Grid>
           </Grid>
         </Container>
+
       </main>
-      {/* Footer */}
-      <Box mt={5}>
-        <Copyright />
-      </Box>
-      {/* End footer */}
+      <Footer />
+
     </React.Fragment>
   );
 }

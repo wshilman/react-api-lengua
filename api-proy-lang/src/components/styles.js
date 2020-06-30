@@ -134,11 +134,13 @@ const useStyles = makeStyles((theme) => ({
     padding: ".2rem",
     display: "inline-block",
     fontWeight: "bold",
-    backgroundColor: "#ff9900",
+    backgroundColor: "#FF9800",
     borderRadius: "5px",
+    cursor: "pointer",
+    height: "25px",
     '&:hover': {
       backgroundColor: pink[300],
-    }
+    },
   },
   listas: {
     listStyle: "none", 
@@ -146,7 +148,44 @@ const useStyles = makeStyles((theme) => ({
     margin: "0", 
     display: "flex", 
     justifyContent: "space-around",
-  }
+  },
+  listas2: {
+    listStyle: "none", 
+    padding: "0", 
+    margin: "0", 
+    display: "flex", 
+    justifyContent: "space-around",
+    '&:hover': {
+      backgroundColor: "#FFF59D",
+    },
+  },
+  board: {
+    background: "linear-gradient(#FFF59D, #FFCC80)",
+    width: "110px",
+    height: "25px",
+    borderRadius: "5px",
+    display: "inline-block",
+    marginLeft: "3px",
+    '&:hover': {
+      background: "#FFCC80",
+    },
+  },
+  board2: {
+    width: "100%",
+    backgroundColor: "#FFCC80",
+    paddingTop: "20px",
+    paddingBottom: "20px",
+  },
+  h4: {
+    display: "inline-block",
+    height: "25px",
+    padding: "0",
+    margin: "0",
+
+
+  },
+
+
 
 }));
 
