@@ -19,6 +19,7 @@ const Lvl1a = () => {
   //NO SE PORQUE NO ANDA, DEBE SER MÁS COMPLEJO...ESTO DEBERÍA CAMBIAR EL CONTENIDO DEL TEXTO 
   const random = function (word, id) {
     //document.getElementById(id).innerText = word;
+
   }
 
 
@@ -122,11 +123,12 @@ const Lvl1a = () => {
 
           </Grid>
         </Container>
+      
       </main>
-
-    <Footer />
+      <Footer />
 
     </Fragment>
+    
   );
 }
 

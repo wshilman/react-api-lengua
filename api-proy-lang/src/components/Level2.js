@@ -80,53 +80,57 @@ const Level2 = () => {
         <Container className={classes.cardGrid}>
           <Grid container justify="center" spacing={4}>
             {/* carta con información */}
-            <Grid item xs={12} sm={6} md={4}>
-              <Card
-                className={classes.card}
-                style={{ backgroundColor: "#DCE775" }}
-              >
-                <h2 style={{ textAlign: "center" }}> Elegí las correctas </h2>
-                <p style={{ textAlign: "center", margin: "0" }}>
+            <Grid item xs={12} sm={12} md={4}>
+              <Card className={classes.card} style={{backgroundColor:"#DCE775"}}>
+                <h2 style={{textAlign:"center"}}> 
+                  Elegí las correctas 
+                </h2>
+                <p style={{textAlign:"center", margin:"0"}}>
                   {" "}
                   Identifica las palabras escritas correctamente.
                 </p>
                 <p></p>
-                <p style={{ textAlign: "center", margin: "0" }}>
-                  ¿ Te Animas ?
+                <p style={{textAlign:"center", margin:"0"}}>
+                  ¿ Te Animás ?
                 </p>
+                <br />
               </Card>
             </Grid>
+
             {/* carta con el juego */}
-            <Grid item xs={12} sm={6} md={8}>
-              <Card
-                className={classes.card}
-                style={{ backgroundColor: "#FFCC80" }}
-              >
+            <Grid item xs={12} sm={12} md={8}>
+              <Card className={classes.card} style={{backgroundColor:"#FFF59D"}}>
                 <Grid container justify="center" alignItems="stretch">
-                  <Grid item xs={12} sm={12} md={12}>
+                  <Grid item xs={12} sm={3} md={3}>
+                    <div className={classes.listas3}>
+                      <div>1- Hablar con otra persona </div>
+                      <div>2- Realizar algo </div>
+                      <div>3- Tener algo a cambio de plata </div>
+                      <div>4- Ir más rápido </div>
+                    </div>
+                  </Grid>
+                  <Grid item xs={12} sm={9} md={9} style={{backgroundColor:"#FFCC80"}}>
                     <RadioGroup aria-label="food" name="food1">
                       <ul className={classes.listas}>
                         <li>
                           <FormControlLabel
-                            value="anvorguesa"
+                            value="comversar"
                             control={<Radio />}
-                            label="anvorguesa"
+                            label="comversar"
                           />
                         </li>
                         <li>
                           <FormControlLabel
-                            value="hamburguesa"
-                            control={
-                              <Radio onClick={clickHandler.bind(this, 1)} />
-                            }
-                            label="hamburguesa"
+                            value="conversar"
+                            control={<Radio onClick={clickHandler.bind(this, 1)} />}
+                            label="conversar"
                           />
                         </li>
                         <li>
                           <FormControlLabel
-                            value="hamburgüesa"
+                            value="conbersar"
                             control={<Radio />}
-                            label="hamburgüesa"
+                            label="conbersar"
                           />
                         </li>
                       </ul>
@@ -135,32 +139,30 @@ const Level2 = () => {
                       <ul className={classes.listas}>
                         <li>
                           <FormControlLabel
-                            value="havlar"
+                            value="haser"
                             control={<Radio />}
-                            label="havlar"
+                            label="haser"
                           />
                         </li>
                         <li>
                           <FormControlLabel
-                            value="hablar"
-                            control={
-                              <Radio onClick={clickHandler.bind(this, 2)} />
-                            }
-                            label="hablar"
+                            value="hacer"
+                            control={<Radio onClick={clickHandler.bind(this, 2)} />}
+                            label="hacer"
                           />
                         </li>
                         <li>
                           <FormControlLabel
-                            value="hablár"
+                            value="hacér"
                             control={<Radio />}
-                            label="hablár"
+                            label="hacér"
                           />
                         </li>
                         <li>
                           <FormControlLabel
-                            value="avlar"
+                            value="acer"
                             control={<Radio />}
-                            label="avlar"
+                            label="acer"
                           />
                         </li>
                       </ul>
@@ -169,32 +171,30 @@ const Level2 = () => {
                       <ul className={classes.listas}>
                         <li>
                           <FormControlLabel
-                            value="ciéncia"
+                            value="conprar"
                             control={<Radio />}
-                            label="ciéncia"
+                            label="conprar"
                           />
                         </li>
                         <li>
                           <FormControlLabel
-                            value="ciensia"
+                            value="comprár"
                             control={<Radio />}
-                            label="ciensia"
+                            label="comprár"
                           />
                         </li>
                         <li>
                           <FormControlLabel
-                            value="sciéncia"
+                            value="komprar"
                             control={<Radio />}
-                            label="sciéncia"
+                            label="komprar"
                           />
                         </li>
                         <li>
                           <FormControlLabel
-                            value="ciencia"
-                            control={
-                              <Radio onClick={clickHandler.bind(this, 3)} />
-                            }
-                            label="ciencia"
+                            value="comprar"
+                            control={<Radio onClick={clickHandler.bind(this, 3)} />}
+                            label="comprar"
                           />
                         </li>
                       </ul>
@@ -203,32 +203,30 @@ const Level2 = () => {
                       <ul className={classes.listas}>
                         <li>
                           <FormControlLabel
-                            value="velocidad"
-                            control={
-                              <Radio onClick={clickHandler.bind(this, 4)} />
-                            }
-                            label="velocidad"
+                            value="acelerar"
+                            control={<Radio onClick={clickHandler.bind(this, 4)} />}
+                            label="acelerar"
                           />
                         </li>
                         <li>
                           <FormControlLabel
-                            value="belocidad"
+                            value="aselerar"
                             control={<Radio />}
-                            label="belocidad"
+                            label="aselerar"
                           />
                         </li>
                         <li>
                           <FormControlLabel
-                            value="velosidad"
+                            value="hacelerar"
                             control={<Radio />}
-                            label="velosidad"
+                            label="hacelerar"
                           />
                         </li>
                         <li>
                           <FormControlLabel
-                            value="velocidád"
+                            value="acelerár"
                             control={<Radio />}
-                            label="velocidád"
+                            label="acelerár"
                           />
                         </li>
                       </ul>
@@ -239,34 +237,24 @@ const Level2 = () => {
             </Grid>
 
             <Grid item xs={12} sm={12} md={12} className={classes.navButtons}>
-              <Button
-                size="large"
-                variant="contained"
-                color="secondary"
-                component={Link}
-                to="/menu"
-              >
+              <Button size="large" variant="contained" color="secondary" component={Link} to="/menu">
                 Volver
               </Button>
 
-              <Button
-                size="large"
-                variant="contained"
-                color="secondary"
-                onClick={solve}
-              >
+              <Button size="large" variant="contained" color="secondary" onClick={solve}>
                 {answer}
               </Button>
 
-              <Button size="large" variant="contained" color="secondary">
+              <Button size="large" variant="contained" color="secondary" component={Link} to="/level3">
                 Siguiente
               </Button>
             </Grid>
           </Grid>
         </Container>
-      </main>
 
+      </main>
       <Footer />
+      
     </Fragment>
   );
 };

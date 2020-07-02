@@ -159,6 +159,13 @@ const useStyles = makeStyles((theme) => ({
       backgroundColor: "#FFF59D",
     },
   },
+  listas3: { 
+    padding: "8px",
+    height: "100%",
+    display: "flex",
+    justifyContent: "space-between",
+    flexDirection: "column",
+  },
   board: {
     background: "linear-gradient(#FFF59D, #FFCC80)",
     width: "110px",

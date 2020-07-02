@@ -85,10 +85,7 @@ const Game1 = () => {
           <Grid container justify="center" spacing={4}>
             {/* carta con información */}
             <Grid item xs={12} sm={6} md={4}>
-              <Card
-                className={classes.card}
-                style={{ backgroundColor: "#AED581" }}
-              >
+              <Card className={classes.card} style={{backgroundColor:"#AED581"}}>
                 <h2 style={{ textAlign: "center" }}>
                   {" "}
                   Identificá las acciones{" "}
@@ -103,53 +100,30 @@ const Game1 = () => {
             </Grid>
             {/* carta con el juego */}
             <Grid item xs={12} sm={6} md={8}>
-              <Card
-                className={classes.card}
-                style={{ backgroundColor: "#FFCC80" }}
-              >
+              <Card className={classes.card} style={{backgroundColor:"#FFCC80"}}>
                 <Grid container justify="center" alignItems="stretch">
-                  <Grid
-                    item
-                    xs={12}
-                    sm={12}
-                    md={6}
-                    style={{ backgroundColor: "orange" }}
-                  >
+                  <Grid item xs={12} sm={12} md={6} style={{backgroundColor:"orange"}}>
                     <ul className={classes.listas}>
                       <li>
                         <img src={require("../images/remar.png")} alt="remar" />
                       </li>
                       <li>
-                        <img
-                          src={require("../images/correr.png")}
-                          alt="correr"
-                        />
+                        <img src={require("../images/correr.png")} alt="correr"/>
                       </li>
                       <li>
-                        <img
-                          src={require("../images/trepar.png")}
-                          alt="trepar"
-                          width="72px"
-                          height="72"
-                        />
+                        <img src={require("../images/trepar.png")} alt="trepar" width="72px" height="72"/>
                       </li>
                     </ul>
                     <br />
                     <ul className={classes.listas}>
                       <li>
-                        <img
-                          src={require("../images/saludar.png")}
-                          alt="saludar"
-                        />
+                        <img src={require("../images/saludar.png")} alt="saludar"/>
                       </li>
                       <li>
                         <img src={require("../images/nadar.png")} alt="nadar" />
                       </li>
                       <li>
-                        <img
-                          src={require("../images/esquiar.png")}
-                          alt="esquiar"
-                        />
+                        <img src={require("../images/esquiar.png")} alt="esquiar"/>
                       </li>
                     </ul>
                   </Grid>
@@ -309,39 +283,22 @@ const Game1 = () => {
                       </ul>
                     </form>
                   </Grid>
-                  <FormHelperText>Pssst.. Son 6</FormHelperText>
+                  <FormHelperText>Pssst.. El tiempo cuenta</FormHelperText>
                 </Grid>
               </Card>
             </Grid>
           </Grid>
 
           <Grid item xs={12} sm={12} md={12} className={classes.navButtons}>
-            <Button
-              size="large"
-              variant="contained"
-              color="secondary"
-              component={Link}
-              to="/menu"
-            >
+            <Button size="large" variant="contained" color="secondary" component={Link} to="/menu">
               Volver
             </Button>
 
-            <Button
-              size="large"
-              variant="contained"
-              color="secondary"
-              onClick={clickFunction}
-            >
+            <Button size="large" variant="contained" color="secondary" onClick={clickFunction}>
               {answer}
             </Button>
 
-            <Button
-              size="large"
-              variant="contained"
-              color="secondary"
-              component={Link}
-              to="/level2"
-            >
+            <Button size="large" variant="contained" color="secondary" component={Link} to="/level2">
               Siguiente
             </Button>
           </Grid>

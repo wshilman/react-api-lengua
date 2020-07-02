@@ -1,9 +1,9 @@
 import React, { Fragment } from "react";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
-import FormHelperText from "@material-ui/core/FormHelperText";
 import Checkbox from "@material-ui/core/Checkbox";
 import { Button, Card } from "@material-ui/core";
 import Hero from "./Hero";
+import Typography from "@material-ui/core/Typography";
 import Navbar from "./Navbar";
 import Grid from "@material-ui/core/Grid";
 import Footer from "./Footer";
@@ -11,8 +11,9 @@ import { Link } from "react-router-dom";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Container from "@material-ui/core/Container";
 import { useStyles } from "./styles.js";
+import List from "@material-ui/core/List";
 
-const Game1 = () => {
+const Lvl3CL = () => {
   //TODOS LOS ESTILOS ESTÁN ACÁ...
   const classes = useStyles();
 
@@ -77,321 +78,148 @@ const Game1 = () => {
       <CssBaseline />
       <Navbar />
 
-      <main>
-        <Hero textLine="Nivel 1" />
+      <main style={{backgroundColor:"#ccffff"}}>
+        <Hero textLine="Nivel 3 - Comprensión Lectora" />
         <br />
 
         <Container className={classes.mainGrid}>
-          <Grid container justify="center" spacing={4}>
-            {/* carta con información */}
-            <Grid item xs={12} sm={6} md={4}>
-              <Card
-                className={classes.card}
-                style={{ backgroundColor: "#AED581" }}
-              >
-                <h2 style={{ textAlign: "center" }}>
-                  {" "}
-                  Identificá las acciones{" "}
-                </h2>
-                <p style={{ textAlign: "center", margin: "0" }}>
-                  Identificalas las imagenes y marca las acciones.
-                  <p></p>
+          <Card className={classes.card}>
+            <Grid container style={{backgroundColor:"tomato", justifyContent:"space-around"}}>
+              <img src={require("../images/doge1total.jpg")} height="90" width="90" style={{margin:"15px"}}/>
+              <div style={{width:"90%"}}>
+                <h2 style={{textAlign:"center"}}> Comprensión Lectora </h2>
+                <p style={{textAlign:"center", margin:"0"}}>
+                  Lee la siguiente historia y responde la preguntas de abajo.
+                  <br />
                 </p>
-                <p style={{ textAlign: "center", margin: "0" }}>
-                  ¿ Te Animas ?
-                </p>
-              </Card>
+                <p style={{textAlign:"center", margin:"0"}}>¿ Te Animás ?</p>
+                <br />
+              </div>
             </Grid>
-            {/* carta con el juego */}
-            <Grid item xs={12} sm={6} md={8}>
-              <Card
-                className={classes.card}
-                style={{ backgroundColor: "#FFCC80" }}
-              >
-                <Grid container justify="center" alignItems="stretch">
-                  <Grid
-                    item
-                    xs={12}
-                    sm={12}
-                    md={6}
-                    style={{ backgroundColor: "orange" }}
-                  >
-                    <ul
-                      style={{
-                        listStyle: "none",
-                        padding: "0",
-                        margin: "0",
-                        display: "flex",
-                        justifyContent: "space-around",
-                      }}
-                    >
-                      <li>
-                        <img src={require("../images/remar.png")} alt="remar" />
-                      </li>
-                      <li>
-                        <img
-                          src={require("../images/correr.png")}
-                          alt="correr"
+          </Card>
+
+          <br />
+
+          <Card className={classes.card} style={{backgroundColor:"#ff9380"}}>
+            <Typography variant="h5" style={{textAlign:"justify", margin:"8px"}}>
+              LA IMAGEN DE ARRIBA DESPUES SE CAMBIA ASI QUEDA ACORDE AL TEXTO
+              texto texto texto texto texto texto texto texto texto texto texto texto 
+              texto texto texto texto texto texto texto texto texto texto texto texto 
+              texto texto texto texto texto texto texto texto texto texto texto texto 
+              texto texto texto texto texto texto texto texto texto texto texto texto 
+              texto texto texto texto texto texto texto texto texto texto texto texto 
+              texto texto texto texto texto texto texto texto texto texto texto texto 
+              texto texto texto texto texto texto texto texto texto texto texto texto 
+              texto texto texto texto texto texto texto texto texto texto texto texto 
+              texto texto texto texto texto texto texto texto texto texto texto texto 
+            </Typography>
+          </Card>
+
+          <p></p>
+
+          <Card className={classes.card} style={{backgroundColor:"#FFCC80"}}>
+            <Typography variant="h6" className={classes.title} style={{paddingLeft: "8px"}}>
+              ¿Que es lo incorrecto del texto?
+            </Typography>
+            <List style={{paddingLeft: "8px"}}>
+              <Typography>
+                1) opcion uno
+              </Typography>
+              <Typography>
+                2) opcion dos
+              </Typography>
+              <Typography>
+                3) opcion tres
+              </Typography>
+            </List>
+          </Card>
+
+          <p></p>
+
+          <Card className={classes.card} style={{backgroundColor:"#FFF59D"}}>
+            <Grid item xs={12} sm={12} md={6}>
+              <form>
+                <ul className={classes.listas} style={{justifyContent:"left", paddingLeft:"8px"}}>
+                  <li>
+                    <FormControlLabel
+                      control={
+                        <Checkbox
+                          checked={state.checkedA}
+                          onChange={handleChange}
+                          name="checkedA"
                         />
-                      </li>
-                      <li>
-                        <img
-                          src={require("../images/trepar.png")}
-                          alt="trepar"
-                          width="72px"
-                          height="72"
+                      }
+                      label="respuesta A"
+                    />
+                  </li>
+                </ul>
+                <ul className={classes.listas} style={{justifyContent:"left", paddingLeft:"8px"}}>
+                  <li id="right2">
+                    <FormControlLabel
+                      control={
+                        <Checkbox
+                          checked={state.checkedD}
+                          onChange={handleChange}
+                          name="checkedD"
                         />
-                      </li>
-                    </ul>
-                    <br />
-                    <ul
-                      style={{
-                        listStyle: "none",
-                        padding: "0",
-                        margin: "0",
-                        display: "flex",
-                        justifyContent: "space-around",
-                      }}
-                    >
-                      <li>
-                        <img
-                          src={require("../images/saludar.png")}
-                          alt="saludar"
+                      }
+                      label="respuesta B"
+                    />
+                  </li>
+                </ul>
+                <ul className={classes.listas} style={{justifyContent:"left", paddingLeft:"8px"}}>
+                  <li>
+                    <FormControlLabel
+                      control={
+                        <Checkbox
+                          checked={state.checkedG}
+                          onChange={handleChange}
+                          name="checkedG"
                         />
-                      </li>
-                      <li>
-                        <img src={require("../images/nadar.png")} alt="nadar" />
-                      </li>
-                      <li>
-                        <img
-                          src={require("../images/esquiar.png")}
-                          alt="esquiar"
+                      }
+                      label="respuesta C"
+                    />
+                  </li>
+                </ul>
+                <ul className={classes.listas} style={{justifyContent:"left", paddingLeft:"8px"}}>
+                  <li id="right5">
+                    <FormControlLabel
+                      control={
+                        <Checkbox
+                          checked={state.checkedJ}
+                          onChange={handleChange}
+                          name="checkedJ"
                         />
-                      </li>
-                    </ul>
-                  </Grid>
-                  <Grid item xs={12} sm={12} md={6}>
-                    <form>
-                      <ul
-                        style={{
-                          listStyle: "none",
-                          padding: "0",
-                          margin: "0",
-                          display: "flex",
-                          justifyContent: "space-around",
-                        }}
-                      >
-                        <li>
-                          <FormControlLabel
-                            control={
-                              <Checkbox
-                                checked={state.checkedA}
-                                onChange={handleChange}
-                                name="checkedA"
-                              />
-                            }
-                            label="hablar"
-                          />
-                        </li>
-                        <li>
-                          <FormControlLabel
-                            control={
-                              <Checkbox
-                                checked={state.checkedB}
-                                onChange={handleChange}
-                                name="checkedB"
-                              />
-                            }
-                            label="estudiar"
-                          />
-                        </li>
-                        <li id="right1">
-                          <FormControlLabel
-                            control={
-                              <Checkbox
-                                checked={state.checkedC}
-                                onChange={handleChange}
-                                name="checkedC"
-                              />
-                            }
-                            label="nadar"
-                          />
-                        </li>
-                      </ul>
-                      <ul
-                        style={{
-                          listStyle: "none",
-                          padding: "0",
-                          margin: "0",
-                          display: "flex",
-                          justifyContent: "space-around",
-                        }}
-                      >
-                        <li id="right2">
-                          <FormControlLabel
-                            control={
-                              <Checkbox
-                                checked={state.checkedD}
-                                onChange={handleChange}
-                                name="checkedD"
-                              />
-                            }
-                            label="saludar"
-                          />
-                        </li>
-                        <li id="right3">
-                          <FormControlLabel
-                            control={
-                              <Checkbox
-                                checked={state.checkedE}
-                                onChange={handleChange}
-                                name="checkedE"
-                              />
-                            }
-                            label="remar"
-                          />
-                        </li>
-                        <li>
-                          <FormControlLabel
-                            control={
-                              <Checkbox
-                                checked={state.checkedF}
-                                onChange={handleChange}
-                                name="checkedF"
-                              />
-                            }
-                            label="cocinar"
-                          />
-                        </li>
-                      </ul>
-                      <ul
-                        style={{
-                          listStyle: "none",
-                          padding: "0",
-                          margin: "0",
-                          display: "flex",
-                          justifyContent: "space-around",
-                        }}
-                      >
-                        <li>
-                          <FormControlLabel
-                            control={
-                              <Checkbox
-                                checked={state.checkedG}
-                                onChange={handleChange}
-                                name="checkedG"
-                              />
-                            }
-                            label="construir"
-                          />
-                        </li>
-                        <li id="right4">
-                          <FormControlLabel
-                            control={
-                              <Checkbox
-                                checked={state.checkedH}
-                                onChange={handleChange}
-                                name="checkedH"
-                              />
-                            }
-                            label="esquiar"
-                          />
-                        </li>
-                        <li>
-                          <FormControlLabel
-                            control={
-                              <Checkbox
-                                checked={state.checkedI}
-                                onChange={handleChange}
-                                name="checkedI"
-                              />
-                            }
-                            label="saltar"
-                          />
-                        </li>
-                      </ul>
-                      <ul
-                        style={{
-                          listStyle: "none",
-                          padding: "0",
-                          margin: "0",
-                          display: "flex",
-                          justifyContent: "space-around",
-                        }}
-                      >
-                        <li id="right5">
-                          <FormControlLabel
-                            control={
-                              <Checkbox
-                                checked={state.checkedJ}
-                                onChange={handleChange}
-                                name="checkedJ"
-                              />
-                            }
-                            label="trepar"
-                          />
-                        </li>
-                        <li>
-                          <FormControlLabel
-                            control={
-                              <Checkbox
-                                checked={state.checkedK}
-                                onChange={handleChange}
-                                name="checkedK"
-                              />
-                            }
-                            label="dormir"
-                          />
-                        </li>
-                        <li id="right6">
-                          <FormControlLabel
-                            control={
-                              <Checkbox
-                                checked={state.checkedL}
-                                onChange={handleChange}
-                                name="checkedL"
-                              />
-                            }
-                            label="correr"
-                          />
-                        </li>
-                      </ul>
-                    </form>
-                  </Grid>
-                  <FormHelperText>Pssst.. Son 6</FormHelperText>
-                </Grid>
-              </Card>
+                      }
+                      label="respuesta D"
+                    />
+                  </li>
+                </ul>
+                <ul className={classes.listas} style={{justifyContent:"left", paddingLeft:"8px"}}>
+                  <li id="right5">
+                    <FormControlLabel
+                      control={
+                        <Checkbox
+                          checked={state.checkedJ}
+                          onChange={handleChange}
+                          name="checkedK"
+                        />
+                      }
+                      label="respuesta E"
+                    />
+                  </li>
+                </ul>
+              </form>
             </Grid>
-          </Grid>
+          </Card>
 
           <Grid item xs={12} sm={12} md={12} className={classes.navButtons}>
-            <Button
-              size="large"
-              variant="contained"
-              color="secondary"
-              component={Link}
-              to="/menu"
-            >
+            <Button size="large" variant="contained" color="secondary" component={Link} to="/menu">
               Volver
             </Button>
 
-            <Button
-              size="large"
-              variant="contained"
-              color="secondary"
-              onClick={clickFunction}
-            >
+            <Button size="large" variant="contained" color="secondary" onClick={clickFunction}>
               {answer}
-            </Button>
-
-            <Button
-              size="large"
-              variant="contained"
-              color="secondary"
-              component={Link}
-              to="/level2"
-            >
-              Siguiente
             </Button>
           </Grid>
         </Container>
@@ -402,4 +230,4 @@ const Game1 = () => {
   );
 };
 
-export default Game1;
+export default Lvl3CL;

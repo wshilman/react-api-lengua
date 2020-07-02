@@ -223,32 +223,15 @@ const Lvl1CL = () => {
           </Card>
 
           <Grid item xs={12} sm={12} md={12} className={classes.navButtons}>
-            <Button
-              size="large"
-              variant="contained"
-              color="secondary"
-              component={Link}
-              to="/menu"
-            >
+            <Button size="large" variant="contained" color="secondary" component={Link} to="/menu">
               Volver
             </Button>
 
-            <Button
-              size="large"
-              variant="contained"
-              color="secondary"
-              onClick={clickFunction}
-            >
+            <Button size="large" variant="contained" color="secondary" onClick={clickFunction}>
               {answer}
             </Button>
 
-            <Button
-              size="large"
-              variant="contained"
-              color="secondary"
-              component={Link}
-              to="/Lvl2CL"
-            >
+            <Button size="large" variant="contained" color="secondary" component={Link} to="/Lvl2CL">
               Siguiente
             </Button>
           </Grid>
