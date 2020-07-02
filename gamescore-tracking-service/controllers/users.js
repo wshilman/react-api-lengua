@@ -9,8 +9,9 @@ module.exports = {
   create(req, res) {
     return users
       .create({
-        username: req.body.username,
-        status: req.body.status
+        firstName: req.body.firstName,
+        lastName: req.body.lastName,
+        score: req.body.score
       })
       .then(users => res.status(200).send(users))
       .catch(error => res.status(400).send(error))
@@ -33,7 +34,8 @@ module.exports = {
   find(req, res) {
     return users.findAll({
       where: {
-        username: req.body.username,
+        firstName: req.body.firstName,
+        lastName: req.body.lastName
       }
     })
       .then(users => res.status(200).send(users))

@@ -7,14 +7,18 @@ module.exports = (sequelize, DataTypes) => {
       primaryKey: true,
       type: DataTypes.INTEGER
     },
-    username: {
+    firstName: {
       allowNull: false,
       type: DataTypes.STRING
     },
-    status: {
-      allowNull: true,
-      defaultValue: 1,
-      type: DataTypes.CHAR
+    lastName: {
+      allowNull: false,
+      type: DataTypes.STRING
+    },
+    score: {
+      allowNull: false,
+      defaultValue: 0,
+      type: DataTypes.INTEGER
     }
   }, {
     timestamps:false,
