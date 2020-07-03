@@ -32,6 +32,21 @@ function Login() {
   sessionStorage.setItem("SesStorPuntaje", "0");
   //alert(str);
 
+  const findUserData = async () => {
+    let user = {
+      firstName: "state.stateNombre",
+      lastName: "state.stateNombre",
+    };
+
+    const userDataAPI = await findUser(user);
+
+    console.log(userDataAPI);
+
+    if (Array.isArray(userDataAPI) && userDataAPI.length) {
+      console.log("El nombre ya existe");
+    }
+  };
+
   return (
     <Grid container component="main" className={classes.root}>
       <CssBaseline />
@@ -78,6 +93,7 @@ function Login() {
               fullWidth
               variant="contained"
               color="primary"
+              onClick={findUserData}
               className={classes.submit}
               component={Link}
               to="/menu"
