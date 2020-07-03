@@ -1,9 +1,7 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
 import Toolbar from "@material-ui/core/Toolbar";
 import Button from "@material-ui/core/Button";
 import { Avatar } from "@material-ui/core";
-import lightGreen from "@material-ui/core/colors/lightGreen";
 import AvatarImg from "../images/logo_monster.png";
 import Typography from "@material-ui/core/Typography";
 import { Link } from "react-router-dom";
@@ -27,7 +25,7 @@ export default function ButtonAppBar() {
         <Typography variant="h6" className={classes.title}>
           Apalabrando ! 
         </Typography>
-        <Button className={classes.pinkhover} component={Link} to="/score">
+        <Button className={classes.pinkhover} component={Link} to="/scoreboard">
           <p style={{color:"white", fontWeight:"bold"}}> 
             PUNTOS:
           </p>

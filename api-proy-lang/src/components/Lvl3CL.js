@@ -22,19 +22,11 @@ const Lvl3CL = () => {
   const [answer, setAnswer] = React.useState("Validar");
 
   const [state, setState] = React.useState({
-    checkedA: false,
-    checkedB: false,
-    checkedC: false,
-    checkedD: false,
-    checkedE: false,
-    checkedF: false,
-    checkedG: false,
-    checkedH: false,
-    checkedI: false,
+    checkedA: false, 
+    checkedD: false, 
+    checkedG: false, 
     checkedJ: false,
-    checkedK: false,
-    checkedL: false,
-    game01End: false,
+    checkedK: false, 
   });
 
   const handleChange = (event) => {
@@ -43,26 +35,14 @@ const Lvl3CL = () => {
 
   const clickFunction = function () {
     if (
-      !state.checkedA &&
-      !state.checkedB &&
-      state.checkedC &&
-      state.checkedD &&
-      state.checkedE &&
-      !state.checkedF &&
-      !state.checkedG &&
-      state.checkedH &&
-      !state.checkedI &&
-      state.checkedJ &&
-      !state.checkedK &&
-      state.checkedL
+      !state.checkedA && 
+      state.checkedD && 
+      !state.checkedG && 
+      !state.checkedJ &&
+      !state.checkedK  
     ) {
       /* ESTO ES UN ASCO DE LINEAS PERO NO HAY UNA MANERA MAS CORTA DE HACERLO */
       document.getElementById("right1").style.backgroundColor = "#8BC34A";
-      document.getElementById("right2").style.backgroundColor = "#8BC34A";
-      document.getElementById("right3").style.backgroundColor = "#8BC34A";
-      document.getElementById("right4").style.backgroundColor = "#8BC34A";
-      document.getElementById("right5").style.backgroundColor = "#8BC34A";
-      document.getElementById("right6").style.backgroundColor = "#8BC34A";
       setAnswer("Correcto!");
       sessionStorage.setItem(
         "SesStorPuntaje",
@@ -92,7 +72,7 @@ const Lvl3CL = () => {
               }}
             >
               <img
-                src={require("../images/PollueloCute.png")}
+                src={require("../images/PollueloCute.png")} alt="pollo"
                 height="90"
                 width="90"
                 style={{ margin: "15px" }}
@@ -118,18 +98,17 @@ const Lvl3CL = () => {
               variant="h5"
               style={{ textAlign: "justify", margin: "8px" }}
             >
-              Los polluelos recién saludos del cascaron adoptan como padre o
-              madre lo primero que ven que se mueve. Oskar Heinroth –uno de los
-              primeros estudiosos de la conducta de los animales – empezó
+              Los polluelos recién salidos del cascaron adoptan como padre o
+              madre lo primero que ven que se mueve. Oskar Heinroth (uno de los
+              primeros estudiosos de la conducta de los animales) empezó
               trabajando con el ánsar común (ganso común). Descubrió que los
-              polluelos nacidos de huevos incubados se apagaban al primero
+              polluelos nacidos de huevos incubados se apegaban al primer
               objeto móvil que veían durante las primeras horas de vida. Por
               ello seguían a una persona o un tractor, por ejemplo. A este
               fenómeno se le denomino de impregnación o de impresión.{" "}
             </Typography>
           </Card>
-
-          <p></p>
+          <br />
 
           <Card className={classes.card} style={{ backgroundColor: "#FFCC80" }}>
             <Typography
@@ -137,7 +116,7 @@ const Lvl3CL = () => {
               className={classes.title}
               style={{ paddingLeft: "8px" }}
             >
-              ¿Que es lo CORRECTO del texto ? . Oskar Heinroth es:
+              ¿Qué es lo CORRECTO del texto ? . Oskar Heinroth es:
             </Typography>
             <List style={{ paddingLeft: "8px" }}>
               <Typography>1) Un criador de polluelos.</Typography>
@@ -146,7 +125,6 @@ const Lvl3CL = () => {
             </List>
           </Card>
 
-          <p></p>
 
           <Card className={classes.card} style={{ backgroundColor: "#FFF59D" }}>
             <Grid item xs={12} sm={12} md={6}>
@@ -158,79 +136,47 @@ const Lvl3CL = () => {
                   <li>
                     <FormControlLabel
                       control={
-                        <Checkbox
-                          checked={state.checkedA}
-                          onChange={handleChange}
-                          name="checkedA"
-                        />
+                        <Checkbox checked={state.checkedA} onChange={handleChange} name="checkedA"/>
                       }
                       label="Respuesta 1"
                     />
                   </li>
                 </ul>
-                <ul
-                  className={classes.listas}
-                  style={{ justifyContent: "left", paddingLeft: "8px" }}
-                >
-                  <li id="right2">
+                <ul className={classes.listas} style={{ justifyContent: "left", paddingLeft: "8px" }}>
+                  <li id="right1">
                     <FormControlLabel
                       control={
-                        <Checkbox
-                          checked={state.checkedD}
-                          onChange={handleChange}
-                          name="checkedD"
-                        />
+                        <Checkbox checked={state.checkedD} onChange={handleChange} name="checkedD"/>
                       }
                       label="Respuesta 1 y Respuesta 2"
                     />
                   </li>
                 </ul>
-                <ul
-                  className={classes.listas}
-                  style={{ justifyContent: "left", paddingLeft: "8px" }}
-                >
+                <ul className={classes.listas} style={{ justifyContent: "left", paddingLeft: "8px" }}>
                   <li>
                     <FormControlLabel
                       control={
-                        <Checkbox
-                          checked={state.checkedG}
-                          onChange={handleChange}
-                          name="checkedG"
-                        />
+                        <Checkbox checked={state.checkedG} onChange={handleChange} name="checkedG"/>
                       }
                       label="Respuesta 2 y Respuesta 3"
                     />
                   </li>
                 </ul>
-                <ul
-                  className={classes.listas}
-                  style={{ justifyContent: "left", paddingLeft: "8px" }}
-                >
-                  <li id="right5">
+                <ul className={classes.listas} style={{ justifyContent: "left", paddingLeft: "8px" }}>
+                  <li>
                     <FormControlLabel
                       control={
-                        <Checkbox
-                          checked={state.checkedJ}
-                          onChange={handleChange}
-                          name="checkedJ"
-                        />
+                        <Checkbox checked={state.checkedJ} onChange={handleChange} name="checkedJ"/>
                       }
-                      label="Respuesta 2"
+                      label="Respuesta 3"
                     />
                   </li>
                 </ul>
-                <ul
-                  className={classes.listas}
-                  style={{ justifyContent: "left", paddingLeft: "8px" }}
-                >
-                  <li id="right5">
+                <ul className={classes.listas} style={{ justifyContent: "left", paddingLeft: "8px" }}>
+                  <li>
                     <FormControlLabel
                       control={
-                        <Checkbox
-                          checked={state.checkedJ}
-                          onChange={handleChange}
-                          name="checkedK"
-                        />
+                        <Checkbox checked={state.checkedk} onChange={handleChange} name="checkedK"/>
                       }
                       label="Ninguna de las respuestas"
                     />
@@ -241,33 +187,16 @@ const Lvl3CL = () => {
           </Card>
 
           <Grid item xs={12} sm={12} md={12} className={classes.navButtons}>
-            <Button
-              size="large"
-              variant="contained"
-              color="secondary"
-              component={Link}
-              to="/Lvl2CL"
-            >
+            <Button size="large" variant="contained" color="secondary" component={Link} to="/Lvl2CL">
               Volver
             </Button>
 
-            <Button
-              size="large"
-              variant="contained"
-              color="secondary"
-              component={Link}
-              to="/menu"
-            >
-              Ir al menu
+            <Button size="large" variant="contained" color="secondary" onClick={clickFunction}>
+              {answer}
             </Button>
 
-            <Button
-              size="large"
-              variant="contained"
-              color="secondary"
-              onClick={clickFunction}
-            >
-              {answer}
+            <Button size="large" variant="contained" color="secondary" component={Link} to="/menu">
+              Ir al menu
             </Button>
           </Grid>
         </Container>
