@@ -151,7 +151,7 @@ function Menu() {
           variant="contained"
           color="secondary"
           component={Link}
-          to="/Score"
+          to="/scoreboard"
         >
           {" "}
           Finalizar Juego

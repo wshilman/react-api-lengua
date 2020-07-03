@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React, { useState, Fragment } from "react";
 import Card from "@material-ui/core/Card";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Grid from "@material-ui/core/Grid";
@@ -17,8 +17,12 @@ const Level3 = () => {
   var start = Date.now();
   var points = sessionStorage.getItem("SesStorPuntaje");
 
+  var points = sessionStorage.getItem("SesStorPuntaje");
+
   const [answer, setAnswer] = React.useState("Validar");
   const [flagEndGame, setFlagEndGame] = React.useState(false);
+
+  const [flagEndGame, setFlagEndGame] = useState(false);
 
   const wordFunction = (word, id) => {
     return function (e) {
