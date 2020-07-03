@@ -78,21 +78,34 @@ const Lvl2CL = () => {
       <CssBaseline />
       <Navbar />
 
-      <main style={{backgroundColor:"#ccffff"}}>
+      <main style={{ backgroundColor: "#ccffff" }}>
         <Hero textLine="Nivel 2 - Comprensión Lectora" />
         <br />
 
         <Container className={classes.mainGrid}>
           <Card className={classes.card}>
-            <Grid container style={{backgroundColor:"#FFF176", justifyContent:"space-around"}}>
-              <img src={require("../images/doge1total.jpg")} height="90" width="90" style={{margin:"15px"}}/>
-              <div style={{width:"90%"}}>
-                <h2 style={{textAlign:"center"}}> Comprensión Lectora </h2>
-                <p style={{textAlign:"center", margin:"0"}}>
+            <Grid
+              container
+              style={{
+                backgroundColor: "#FFF176",
+                justifyContent: "space-around",
+              }}
+            >
+              <img
+                src={require("../images/CocoCute.jpg")}
+                height="90"
+                width="90"
+                style={{ margin: "15px" }}
+              />
+              <div style={{ width: "90%" }}>
+                <h2 style={{ textAlign: "center" }}> Comprensión Lectora </h2>
+                <p style={{ textAlign: "center", margin: "0" }}>
                   Lee la siguiente historia y responde la preguntas de abajo.
                   <br />
                 </p>
-                <p style={{textAlign:"center", margin:"0"}}>¿ Te Animás ?</p>
+                <p style={{ textAlign: "center", margin: "0" }}>
+                  ¿ Te Animás ?
+                </p>
                 <br />
               </div>
             </Grid>
@@ -100,46 +113,55 @@ const Lvl2CL = () => {
 
           <br />
 
-          <Card className={classes.card} style={{backgroundColor:"#FFF59D"}}>
-            <Typography variant="h5" style={{textAlign:"justify", margin:"8px"}}>
-              LA IMAGEN DE ARRIBA DESPUES SE CAMBIA ASI QUEDA ACORDE AL TEXTO
-              texto texto texto texto texto texto texto texto texto texto texto texto 
-              texto texto texto texto texto texto texto texto texto texto texto texto 
-              texto texto texto texto texto texto texto texto texto texto texto texto 
-              texto texto texto texto texto texto texto texto texto texto texto texto 
-              texto texto texto texto texto texto texto texto texto texto texto texto 
-              texto texto texto texto texto texto texto texto texto texto texto texto 
-              texto texto texto texto texto texto texto texto texto texto texto texto 
-              texto texto texto texto texto texto texto texto texto texto texto texto 
-              texto texto texto texto texto texto texto texto texto texto texto texto 
+          <Card className={classes.card} style={{ backgroundColor: "#FFF59D" }}>
+            <Typography
+              variant="h5"
+              style={{ textAlign: "justify", margin: "8px" }}
+            >
+              Para los zoólogos, el caimán, el cocodrilo y el aligátor son
+              diferentes, pero también muy parecidos entre sí. El cocodrilo
+              tiene los dientes formados en hileras; puede medir ocho metros,
+              como el del Orinoco; además emite gruñidos. El caimán tiene unas
+              placas Oseas (de huesos) en el vientre (la pansa), es el más feroz
+              de todos y mide hasta metro y medio de largo. Por su parte, el
+              aligátor ruge. Su tamaño varía entre uno y seis metros de largo.
+              Todos tienen un diente de eclosión en la punta del hocico, con el
+              que rompen la dura cascara del huevo para nacer.{" "}
             </Typography>
           </Card>
 
           <p></p>
 
-          <Card className={classes.card} style={{backgroundColor:"#FFCC80"}}>
-            <Typography variant="h6" className={classes.title} style={{paddingLeft: "8px"}}>
-              ¿Que es lo incorrecto del texto?
+          <Card className={classes.card} style={{ backgroundColor: "#FFCC80" }}>
+            <Typography
+              variant="h6"
+              className={classes.title}
+              style={{ paddingLeft: "8px" }}
+            >
+              ¿Que es lo CORRECTO del texto?
             </Typography>
-            <List style={{paddingLeft: "8px"}}>
+            <List style={{ paddingLeft: "8px" }}>
               <Typography>
-                1) opcion uno
+                1) Los dientes del cocodrilo pueden medir ocho centímetros.
               </Typography>
               <Typography>
-                2) opcion dos
+                2) El aligátor tiene placas Oseas en el vientre.
               </Typography>
               <Typography>
-                3) opcion tres
+                3) El cocodrilo habita principalmente en el Rio de la Plata.
               </Typography>
             </List>
           </Card>
 
           <p></p>
 
-          <Card className={classes.card} style={{backgroundColor:"#FFF59D"}}>
+          <Card className={classes.card} style={{ backgroundColor: "#FFF59D" }}>
             <Grid item xs={12} sm={12} md={6}>
               <form>
-                <ul className={classes.listas} style={{justifyContent:"left", paddingLeft:"8px"}}>
+                <ul
+                  className={classes.listas}
+                  style={{ justifyContent: "left", paddingLeft: "8px" }}
+                >
                   <li>
                     <FormControlLabel
                       control={
@@ -149,11 +171,14 @@ const Lvl2CL = () => {
                           name="checkedA"
                         />
                       }
-                      label="respuesta A"
+                      label="Respuesta 1"
                     />
                   </li>
                 </ul>
-                <ul className={classes.listas} style={{justifyContent:"left", paddingLeft:"8px"}}>
+                <ul
+                  className={classes.listas}
+                  style={{ justifyContent: "left", paddingLeft: "8px" }}
+                >
                   <li id="right2">
                     <FormControlLabel
                       control={
@@ -163,11 +188,14 @@ const Lvl2CL = () => {
                           name="checkedD"
                         />
                       }
-                      label="respuesta B"
+                      label="Respuesta 1 y Respuesta 2"
                     />
                   </li>
                 </ul>
-                <ul className={classes.listas} style={{justifyContent:"left", paddingLeft:"8px"}}>
+                <ul
+                  className={classes.listas}
+                  style={{ justifyContent: "left", paddingLeft: "8px" }}
+                >
                   <li>
                     <FormControlLabel
                       control={
@@ -177,11 +205,14 @@ const Lvl2CL = () => {
                           name="checkedG"
                         />
                       }
-                      label="respuesta C"
+                      label="Respuesta 2 y Respuesta 3"
                     />
                   </li>
                 </ul>
-                <ul className={classes.listas} style={{justifyContent:"left", paddingLeft:"8px"}}>
+                <ul
+                  className={classes.listas}
+                  style={{ justifyContent: "left", paddingLeft: "8px" }}
+                >
                   <li id="right5">
                     <FormControlLabel
                       control={
@@ -191,11 +222,14 @@ const Lvl2CL = () => {
                           name="checkedJ"
                         />
                       }
-                      label="respuesta D"
+                      label="Respuesta 3"
                     />
                   </li>
                 </ul>
-                <ul className={classes.listas} style={{justifyContent:"left", paddingLeft:"8px"}}>
+                <ul
+                  className={classes.listas}
+                  style={{ justifyContent: "left", paddingLeft: "8px" }}
+                >
                   <li id="right5">
                     <FormControlLabel
                       control={
@@ -205,7 +239,7 @@ const Lvl2CL = () => {
                           name="checkedK"
                         />
                       }
-                      label="respuesta E"
+                      label="Ninguna de las respuestas"
                     />
                   </li>
                 </ul>
@@ -214,15 +248,32 @@ const Lvl2CL = () => {
           </Card>
 
           <Grid item xs={12} sm={12} md={12} className={classes.navButtons}>
-            <Button size="large" variant="contained" color="secondary" component={Link} to="/menu">
+            <Button
+              size="large"
+              variant="contained"
+              color="secondary"
+              component={Link}
+              to="/Lvl1CL"
+            >
               Volver
             </Button>
 
-            <Button size="large" variant="contained" color="secondary" onClick={clickFunction}>
+            <Button
+              size="large"
+              variant="contained"
+              color="secondary"
+              onClick={clickFunction}
+            >
               {answer}
             </Button>
 
-            <Button size="large" variant="contained" color="secondary" component={Link} to="/Lvl3CL">
+            <Button
+              size="large"
+              variant="contained"
+              color="secondary"
+              component={Link}
+              to="/Lvl3CL"
+            >
               Siguiente
             </Button>
           </Grid>

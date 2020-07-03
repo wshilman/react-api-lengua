@@ -14,9 +14,8 @@ import sustantivos from "../images/sustantivos.jpg";
 import Navbar from "../components/Navbar.js";
 import { Link } from "react-router-dom";
 import { useStyles } from "./styles.js";
-import Footer from './Footer';
-import Hero from './Hero';
-
+import Footer from "./Footer";
+import Hero from "./Hero";
 
 function Menu() {
   //TODOS LOS ESTILOS ESTÁN ACÁ...
@@ -26,12 +25,11 @@ function Menu() {
     <React.Fragment>
       <CssBaseline />
       <Navbar />
-      
-      <main style={{backgroundColor:"#ccffff"}}>
-        
-        <Hero textLine='Qué querés jugar?' />
+
+      <main style={{ backgroundColor: "#ccffff" }}>
+        <Hero textLine="Qué querés jugar?" />
         <br />
-        
+
         <Container className={classes.cardGrid}>
           <Grid container spacing={4}>
             <Grid item xs={12} sm={6} md={4}>
@@ -42,7 +40,12 @@ function Menu() {
                   title="Image title"
                 />
                 <CardContent className={classes.cardContent}>
-                  <Typography gutterBottom variant="h5" component="h2" style={{textAlign:"center", backgroundColor:"#FFD54F"}}>
+                  <Typography
+                    gutterBottom
+                    variant="h5"
+                    component="h2"
+                    style={{ textAlign: "center", backgroundColor: "#FFD54F" }}
+                  >
                     Verbos
                   </Typography>
                   <Typography>
@@ -75,7 +78,12 @@ function Menu() {
                   title="Image title"
                 />
                 <CardContent className={classes.cardContent}>
-                  <Typography gutterBottom variant="h5" component="h2" style={{textAlign:"center", backgroundColor:"#FFD54F"}}>
+                  <Typography
+                    gutterBottom
+                    variant="h5"
+                    component="h2"
+                    style={{ textAlign: "center", backgroundColor: "#FFD54F" }}
+                  >
                     Adjetivos
                   </Typography>
                   <Typography>
@@ -105,13 +113,20 @@ function Menu() {
                   title="Image title"
                 />
                 <CardContent className={classes.cardContent}>
-                  <Typography gutterBottom variant="h5" component="h2" style={{textAlign:"center", backgroundColor:"#FFD54F"}}>
+                  <Typography
+                    gutterBottom
+                    variant="h5"
+                    component="h2"
+                    style={{ textAlign: "center", backgroundColor: "#FFD54F" }}
+                  >
                     Comprensión Lectora
                   </Typography>
                   <Typography>
-                    Los Sustantivos son: Lorem ipsum dolor sit amet, consectetur
-                    adipiscing elit. Ut sodales molestie tellus, eget euismod
-                    velit ultrices a. .{" "}
+                    Comprensión Lectora: La comprensión lectora es el proceso de
+                    entender las ideas relevantes de algo que leemos, es también
+                    relacionarlos con esas ideas que ya sabemos. Es importante
+                    para cada uno entender y relacionar el texto con el
+                    significado de las palabras. . . .{" "}
                   </Typography>
                 </CardContent>
                 <CardActions style={{ alignSelf: "center" }}>
@@ -129,10 +144,8 @@ function Menu() {
             </Grid>
           </Grid>
         </Container>
-
       </main>
       <Footer />
-
     </React.Fragment>
   );
 }
