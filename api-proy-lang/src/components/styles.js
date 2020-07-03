@@ -166,6 +166,16 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "space-between",
     flexDirection: "column",
   },
+  listas4: { 
+    listStyle: "none", 
+    padding: "0", 
+    margin: "0", 
+    display: "flex", 
+    justifyContent: "space-between",
+    '&:hover': {
+      backgroundColor: "#FFF59D",
+    },
+  },
   board: {
     background: "linear-gradient(#FFF59D, #FFCC80)",
     width: "110px",
@@ -188,8 +198,17 @@ const useStyles = makeStyles((theme) => ({
     height: "25px",
     padding: "0",
     margin: "0",
-
-
+    background: "linear-gradient(#ffd480, #ff99cc)",
+    borderRadius: "5px",
+  },
+  divss: {
+    textAlign: "center",
+    margin: "3px",
+    backgroundColor: "#ffd480",
+    fontWeight: "bold",
+  },
+  pss: {
+    margin: "8px",
   },
 
 

@@ -1,4 +1,4 @@
-import React, { useState, Fragment } from "react";
+import React, { Fragment } from "react";
 import Card from "@material-ui/core/Card";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Grid from "@material-ui/core/Grid";
@@ -15,12 +15,43 @@ const Lvl2a = () => {
     //TODOS LOS ESTILOS ESTÁN ACÁ...
   const classes = useStyles();
 
+  var start = Date.now();
 
-  //NO SE PORQUE NO ANDA, DEBE SER MÁS COMPLEJO...ESTO DEBERÍA CAMBIAR EL CONTENIDO DEL TEXTO 
-  const random = function (word, id) {
-    //document.getElementById(id).innerText = word;
+  const [answer, setAnswer] = React.useState("Validar");
+
+  const wordFunction = (word, id) => {
+    return function (e) {
+      document.getElementById(id).innerText = word;
+    }
+  };
+
+  const clickFunction = function () {
+    const a = document.getElementById("h41").innerText;
+    const b = document.getElementById("h42").innerText;
+    const c = document.getElementById("h43").innerText;
+    const d = document.getElementById("h44").innerText;
+    const e = document.getElementById("h45").innerText; 
+    const f = document.getElementById("h46").innerText; 
+    const g = document.getElementById("h47").innerText; 
+    
+    if (
+      a == "carnívoro" && 
+      b == "adaptable" && 
+      c == "largo" && 
+      d == "ágil" && 
+      e == "silencioso" && 
+      f == "depredador" && 
+      g == "solitario" 
+    ) {
+      setAnswer("Correcto!");
+      sessionStorage.setItem(
+        "SesStorPuntaje",
+        Math.trunc(100 - Math.floor((Date.now() - start) / 1000))
+      );
+    } else {
+      setAnswer("Incorrecto");
+    }
   }
-
 
 
   return (
@@ -38,7 +69,7 @@ const Lvl2a = () => {
             {/* carta con información */}
             <Grid item xs={12} sm={6} md={4}>
               <Card className={classes.card} style={{backgroundColor:"#DCE775"}}>
-                <h2 style={{textAlign:"center"}}> Completá las frases </h2>
+                <h2 style={{textAlign:"center"}}> Completá el cuento </h2>
                 <p style={{textAlign:"center", margin:"0"}}> A tu derecha tenés uun montón de palabras....
                 alguien que redacte esto mejor... 
                 </p>
@@ -49,95 +80,76 @@ const Lvl2a = () => {
               <Card className={classes.card} style={{backgroundColor:"#FFCC80"}}>
                 <Grid container justify="center" alignItems="stretch">
                   <Grid item xs={12} sm={12} md={6} style={{backgroundColor:"#FFF59D"}}> 
-                    <p style={{textAlign:"justify", margin:"5px"}}> Un día todos los animales más <h4 id="h41" className={classes.h4}>??????</h4> del 
-                      bosque decidieron  hacer una fiesta. <br />
-                      - "<b>Yo invito a mi casa a los que no vuelan</b>", dijo la araña muy <h4 id="h42" className={classes.h4}>??????</h4>. <br />
-                      Todos aceptaron sin ningún tipo de problema. Aprovechando sus ocho patas, la araña escribió todas las cartas 
-                      de invitación. Además dejó su casa <h4 id="h43" className={classes.h4}>??????</h4> y arreglada. 
-                      La araña sabía que todos los invitados eran muy <h4 id="h44" className={classes.h4}>??????</h4>, por eso cuando era la hora y 
-                      ningún invitado apareció, ella se puso muy <h4 id="h45" className={classes.h4}>??????</h4>. <br /> 
-                      - "<b>Nadie quiere venir a mi casa</b>", se dijo a sí misma. <br />
-                      Entonces decidió salir para averiguar que había pasado y encontró que sus invitados esperaban <h4 id="h46" className={classes.h4}>??????</h4> en 
-                      una larga fila afuera de su puerta. Al lado de la puerta había un gran cartel que decía "Antes de entrar límpiese sus pies". 
-                      La araña se puso <h4 id="h47" className={classes.h4}>??????</h4> al ver que todos los invitados estaban esperando muy <h4 id="h48" className={classes.h4}>??????</h4> al cienpiés para que 
-                      termine de limpiarse cada uno de sus pies. 
-                      El cienpiés terminó y todos los demás pudieron entrar y disfrutar de la <h4 id="h49" className={classes.h4}>??????</h4> fiesta de la araña. 
+                    <p style={{textAlign:"justify", margin:"5px"}}> 
+                    El puma es un animal <p id="h41" className={classes.h4}>??????</p> que vive en especialmente en los bosques 
+                    o montañas de América, aunque es muy <p id="h42" className={classes.h4}>??????</p> y puede vivir en varias 
+                    zonas diferentes. <br />
+                    Pertenece a la familia de los félidos y puede ser tan <p id="h43" className={classes.h4}>??????</p> como 
+                    dos metros, sin incluir su cola. Es muy <p id="h44" className={classes.h4}>??????</p> para trepar árboles 
+                    y se refugia en ellos cuando se ve en peligro. <br />
+                    Este es un felino muy <p id="h45" className={classes.h4}>??????</p>, se desplaza furtivamente y es el terror 
+                    de los demás animales. Aunque es un gran <p id="h46" className={classes.h4}>??????</p>, no siempre es la 
+                    especie dominante en su área. Se trata de un felino <p id="h47" className={classes.h4}>??????</p> que evita 
+                    el contacto con las personas.  
                     </p>
                   </Grid>
                   <Grid item xs={12} sm={12} md={6} style={{margin:"auto"}}> 
-                  {/* TODO ESTO SE PODRÍA AHORRAR CON UNA FUNCIÓN MAP, PERO ESTÁ BIEN ASÍ, TRANQUI */}
-                      <ul id="ul1" className={classes.listas2} style={{margin:"12px"}}>
-                        <li className={classes.words} onClick={random("TRISTE", "h41")}>
-                          TRISTE
-                        </li>
-                        <li className={classes.words} onClick={random("ACHICAR", "h41")}>
-                          achicar 
-                        </li> 
-                      </ul>
-                      <ul id="ul2" className={classes.listas2} style={{margin:"12px"}}>
-                        <li className={classes.words} onClick={random("SORPRENDER", "h42")}>
-                          sorprender  
-                        </li>
-                        <li className={classes.words} onClick={random("GRAN", "h42")}>
-                          GRAN 
-                        </li>
-                      </ul>
-                      <ul id="ul3" className={classes.listas2} style={{margin:"12px"}}>
-                        <li className={classes.words} onClick={random("FELIZ", "h43")}>
-                          FELIZ  
-                        </li>
-                        <li className={classes.words} onClick={random("ENOJAR", "h43")}>
-                          enojar  
-                        </li>
-                      </ul>
-                      <ul id="ul4" className={classes.listas2} style={{margin:"12px"}}>
-                        <li className={classes.words} onClick={random("CONFUSOS", "h44")}>
-                          confusos  
-                        </li>
-                        <li className={classes.words} onClick={random("PUNTUALES", "h44")}>
-                          PUNTUALES 
-                        </li> 
-                      </ul>
-                      <ul id="ul5" className={classes.listas2} style={{margin:"12px"}}>
-                        <li className={classes.words} onClick={random("LIMPIA", "h45")}>
-                          LIMPIA 
-                        </li> 
-                        <li className={classes.words} onClick={random("MAREADO", "h45")}>
-                          mareado 
-                        </li> 
-                      </ul>
-                      <ul id="ul6" className={classes.listas2} style={{margin:"12px"}}>
-                        <li className={classes.words} onClick={random("PUNZANTE", "h46")}>
-                          punzante
-                        </li>
-                        <li className={classes.words} onClick={random("CHICOS", "h46")}>
-                          CHICOS 
-                        </li> 
-                      </ul>
-                      <ul id="ul7" className={classes.listas2} style={{margin:"12px"}}>
-                        <li className={classes.words} onClick={random("CAPACES", "h47")}>
-                          capaces  
-                        </li>
-                        <li className={classes.words} onClick={random("ENOJADOS", "h47")}>
-                          ENOJADOS  
-                        </li>
-                      </ul>
-                      <ul id="ul8" className={classes.listas2} style={{margin:"12px"}}>
-                        <li className={classes.words} onClick={random("TRANQUILOS", "h48")}>
-                          TRANQUILOS  
-                        </li>
-                        <li className={classes.words} onClick={random("COMER", "h48")}>
-                          comer 
-                        </li> 
-                      </ul>
-                      <ul id="ul9" className={classes.listas2} style={{margin:"12px"}}>
-                        <li className={classes.words} onClick={random("BIEN", "h49")}>
-                          bien 
-                        </li> 
-                        <li className={classes.words} onClick={random("ENTUSIASMADA", "h49")}>
-                          ENTUSIASMADA 
-                        </li> 
-                      </ul>
+                    <ul className={classes.listas2} style={{margin:"12px"}}>
+                      <li className={classes.words} onClick={wordFunction("carnívoro", "h41")}>
+                        carnívoro
+                      </li>
+                      <li className={classes.words} onClick={wordFunction("chiquito", "h41")}>
+                        chiquito 
+                      </li> 
+                    </ul>
+                    <ul className={classes.listas2} style={{margin:"12px"}}>
+                      <li className={classes.words} onClick={wordFunction("nadador", "h42")}>
+                        nadador  
+                      </li>
+                      <li className={classes.words} onClick={wordFunction("adaptable", "h42")}>
+                        adaptable 
+                      </li>
+                    </ul>
+                    <ul className={classes.listas2} style={{margin:"12px"}}>
+                      <li className={classes.words} onClick={wordFunction("largo", "h43")}>
+                        largo  
+                      </li>
+                      <li className={classes.words} onClick={wordFunction("gordo", "h43")}>
+                        gordo  
+                      </li>
+                    </ul>
+                    <ul className={classes.listas2} style={{margin:"12px"}}>
+                      <li className={classes.words} onClick={wordFunction("ágil", "h44")}>
+                        ágil  
+                      </li>
+                      <li className={classes.words} onClick={wordFunction("torpe", "h44")}>
+                        torpe 
+                      </li> 
+                    </ul>
+                    <ul className={classes.listas2} style={{margin:"12px"}}>
+                      <li className={classes.words} onClick={wordFunction("silencioso", "h45")}>
+                        silencioso 
+                      </li> 
+                      <li className={classes.words} onClick={wordFunction("maullador", "h45")}>
+                        maullador 
+                      </li> 
+                    </ul>
+                    <ul className={classes.listas2} style={{margin:"12px"}}>
+                      <li className={classes.words} onClick={wordFunction("artista", "h46")}>
+                        artista 
+                      </li>
+                      <li className={classes.words} onClick={wordFunction("depredador", "h46")}>
+                        depredador 
+                      </li> 
+                    </ul>
+                    <ul className={classes.listas2} style={{margin:"12px"}}>
+                      <li className={classes.words} onClick={wordFunction("tierno", "h47")}>
+                        tierno  
+                      </li>
+                      <li className={classes.words} onClick={wordFunction("solitario", "h47")}>
+                        solitario  
+                      </li>
+                    </ul>
                   </Grid>
                 </Grid>
               </Card>
@@ -148,15 +160,14 @@ const Lvl2a = () => {
                 Volver 
               </Button>
 
-              <Button size='large' variant='contained' color='secondary'> 
-                answer 
+              <Button size='large' variant='contained' color='secondary' onClick={clickFunction}> 
+                {answer} 
               </Button>
-                    
+
               <Button size='large' variant='contained' color='secondary' component={Link}to="/level3adj"> 
                 Siguiente 
-              </Button>   
+              </Button>  
             </Grid>
-
 
           </Grid>
         </Container>
@@ -169,3 +180,4 @@ const Lvl2a = () => {
 }
 
 export default Lvl2a;
+

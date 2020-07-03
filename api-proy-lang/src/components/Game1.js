@@ -12,6 +12,7 @@ import CssBaseline from "@material-ui/core/CssBaseline";
 import Container from "@material-ui/core/Container";
 import { useStyles } from "./styles.js";
 
+
 const Game1 = () => {
   //TODOS LOS ESTILOS ESTÁN ACÁ...
   const classes = useStyles();
@@ -53,7 +54,7 @@ const Game1 = () => {
       !state.checkedI &&
       state.checkedJ &&
       !state.checkedK &&
-      state.checkedL
+      state.checkedL 
     ) {
       /* ESTO ES UN ASCO DE LINEAS PERO NO HAY UNA MANERA MAS CORTA DE HACERLO */
       document.getElementById("right1").style.backgroundColor = "#8BC34A";
@@ -70,7 +71,8 @@ const Game1 = () => {
     } else {
       setAnswer("Incorrecto");
     }
-  };
+	};
+	
 
   return (
     <Fragment>
@@ -81,28 +83,29 @@ const Game1 = () => {
         <Hero textLine="Nivel 1" />
         <br />
 
-        <Container className={classes.mainGrid}>
+        <Container className={classes.cardGrid}>
           <Grid container justify="center" spacing={4}>
             {/* carta con información */}
             <Grid item xs={12} sm={6} md={4}>
               <Card className={classes.card} style={{backgroundColor:"#AED581"}}>
-                <h2 style={{ textAlign: "center" }}>
-                  {" "}
-                  Identificá las acciones{" "}
+                <h2 style={{textAlign:"center"}}>
+                  Identificá las acciones
                 </h2>
-                <p style={{ textAlign: "center", margin: "0" }}>
-                  Identificalas las imagenes y marca las acciones.
+                <p style={{textAlign:"center", margin:"0"}}>
+                  Identificá las imágenes y marcá las acciones.
                 </p>
-                <p style={{ textAlign: "center", margin: "0" }}>
-                  ¿ Te Animas ?
+                <p style={{textAlign:"center", margin:"0"}}>
+                  ¿ Te Animás ? 
                 </p>
+                <br />
               </Card>
             </Grid>
+
             {/* carta con el juego */}
             <Grid item xs={12} sm={6} md={8}>
               <Card className={classes.card} style={{backgroundColor:"#FFCC80"}}>
                 <Grid container justify="center" alignItems="stretch">
-                  <Grid item xs={12} sm={12} md={6} style={{backgroundColor:"orange"}}>
+									<Grid item xs={12} sm={12} md={6} style={{backgroundColor:"orange"}}>
                     <ul className={classes.listas}>
                       <li>
                         <img src={require("../images/remar.png")} alt="remar" />
@@ -283,29 +286,30 @@ const Game1 = () => {
                       </ul>
                     </form>
                   </Grid>
-                  <FormHelperText>Pssst.. El tiempo cuenta</FormHelperText>
+									<FormHelperText>Pssst.. El tiempo cuenta</FormHelperText>
                 </Grid>
               </Card>
             </Grid>
-          </Grid>
 
-          <Grid item xs={12} sm={12} md={12} className={classes.navButtons}>
-            <Button size="large" variant="contained" color="secondary" component={Link} to="/menu">
-              Volver
-            </Button>
+            <Grid item xs={12} sm={12} md={12} className={classes.navButtons}>
+              <Button size="large" variant="contained" color="secondary" component={Link} to="/menu">
+                Volver
+              </Button>
 
-            <Button size="large" variant="contained" color="secondary" onClick={clickFunction}>
-              {answer}
-            </Button>
+              <Button size="large" variant="contained" color="secondary" onClick={clickFunction}>
+                {answer}
+              </Button>
 
-            <Button size="large" variant="contained" color="secondary" component={Link} to="/level2">
-              Siguiente
-            </Button>
+              <Button size="large" variant="contained" color="secondary" component={Link} to="/level2">
+                Siguiente
+              </Button>
+            </Grid>
           </Grid>
         </Container>
-      </main>
 
+      </main>
       <Footer />
+      
     </Fragment>
   );
 };

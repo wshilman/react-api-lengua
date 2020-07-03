@@ -8,9 +8,6 @@ import Navbar from "../components/Navbar.js";
 import Hero from "./Hero";
 import Footer from "./Footer";
 import { Link } from "react-router-dom";
-import Radio from "@material-ui/core/Radio";
-import RadioGroup from "@material-ui/core/RadioGroup";
-import FormControlLabel from "@material-ui/core/FormControlLabel";
 import { useStyles } from "./styles.js";
 
 const Level3 = () => {
@@ -18,55 +15,37 @@ const Level3 = () => {
   const classes = useStyles();
 
   var start = Date.now();
-  var points = sessionStorage.getItem("SesStorPuntaje");
 
-  const [answer, setAnswer] = useState("Validar");
+  const [answer, setAnswer] = React.useState("Validar");
 
-  const [correct1, setCorrect1] = useState(false);
-  const [correct2, setCorrect2] = useState(false);
-  const [correct3, setCorrect3] = useState(false);
-  const [correct4, setCorrect4] = useState(false);
-  const [flagEndGame, setFlagEndGame] = useState(false);
-
-  const clickHandler = (num) => {
-    switch (num) {
-      case 1:
-        setCorrect1(!correct1);
-        break;
-      case 2:
-        setCorrect2(!correct2);
-        break;
-      case 3:
-        setCorrect3(!correct3);
-        break;
-      case 4:
-        setCorrect4(!correct4);
-        break;
-      default:
-        break;
+  const wordFunction = (word, id) => {
+    return function (e) {
+      document.getElementById(id).innerText = word;
     }
   };
 
-  const solve = () => {
-    if ((correct1 && correct2 && correct3 && correct4) === true) {
-      setAnswer("Sos un experto!");
+  const clickFunction = function () {
+    const a = document.getElementById("h41").innerText;
+    const b = document.getElementById("h42").innerText;
+    const c = document.getElementById("h43").innerText;
+    const d = document.getElementById("h44").innerText;
 
-      if (flagEndGame === false) {
-        /*Sumamos los puntos actuales de la session mas los nuevos */
-        points =
-          parseInt(points) +
-          Math.trunc(100 - Math.floor((Date.now() - start) / 1000));
-
-        /*Asignamos los puntos calculados a la session*/
-        sessionStorage.setItem("SesStorPuntaje", points);
-
-        /*cambiamos el estado para que no sume muchas veces al apretar "Validar" */
-        setFlagEndGame(!flagEndGame);
-      }
+    if (
+      a == "estudian" && 
+      b == "fuimos" && 
+      c == "ganaba" && 
+      d == "juntaré" 
+    ) {
+      setAnswer("Correcto!");
+      sessionStorage.setItem(
+        "SesStorPuntaje",
+        Math.trunc(100 - Math.floor((Date.now() - start) / 1000))
+      );
     } else {
-      setAnswer("Te quivocaste campeon");
+      setAnswer("Incorrecto");
     }
-  };
+  }
+
 
   return (
     <Fragment>
@@ -101,16 +80,65 @@ const Level3 = () => {
             <Grid item xs={12} sm={12} md={8}>
               <Card className={classes.card} style={{backgroundColor:"#FFF59D"}}>
                 <Grid container justify="center" alignItems="stretch">
-                  <Grid item xs={12} sm={3} md={3}>
+                  <Grid item xs={12} sm={7} md={7}>
                     <div className={classes.listas3}>
-                      <div>........... </div>
-                      <div>....... </div>
-                      <div>......... </div>
-                      <div>............ </div>
+                      <div className={classes.divss}> PRESENTE INDICATIVO </div>
+                      <p className={classes.pss}> Victor y Erika <p id="h41" className={classes.h4}>??????</p> inglés en otra escuela. </p>
+                      <div className={classes.divss}> PRETÉRITO PERFECTO SIMPLE </div>
+                      <p className={classes.pss}> Nosotros <p id="h42" className={classes.h4}>??????</p> a la playa la semana pasada. </p>
+                      <div className={classes.divss}> PRETÉRITO IMPERFECTO </div>
+                      <p className={classes.pss}> Sonia ahorraba toda la plata que <p id="h43" className={classes.h4}>??????</p> trabajando. </p>
+                      <div className={classes.divss}> FUTURO SIMPLE </div>
+                      <p className={classes.pss}> Me <p id="h44" className={classes.h4}>??????</p> con mis amigos luego de la pandemia. </p>
                     </div>
                   </Grid>
-                  <Grid item xs={12} sm={9} md={9} style={{backgroundColor:"#FFCC80"}}>
-                    <p> otro juego </p>
+                  <Grid item xs={12} sm={5} md={5} style={{backgroundColor:"#FFCC80"}}>
+                    <div className={classes.listas3}>
+                      <ul className={classes.listas4} style={{margin:"12px"}}>
+                        <li className={classes.words} onClick={wordFunction('estudian', 'h41')}>
+                          estudian  
+                        </li>
+                        <li className={classes.words} onClick={wordFunction('estudiando', 'h41')}>
+                          estudiando 
+                        </li> 
+                        <li className={classes.words} onClick={wordFunction('estudiaron', 'h41')}>
+                          estudiaron 
+                        </li> 
+                      </ul>
+                      <ul className={classes.listas4} style={{margin:"12px"}} >
+                        <li className={classes.words} onClick={wordFunction('iríamos', 'h42')}>
+                          iríamos 
+                        </li>  
+                        <li className={classes.words} onClick={wordFunction('fuimos', 'h42')}>
+                          fuimos
+                        </li>
+                        <li className={classes.words} onClick={wordFunction('fueron', 'h42')}>
+                          fueron 
+                        </li>    
+                      </ul>
+                      <ul className={classes.listas4} style={{margin:"12px"}} >
+                        <li className={classes.words} onClick={wordFunction('ganaba', 'h43')}>
+                          ganaba 
+                        </li>  
+                        <li className={classes.words} onClick={wordFunction('gana', 'h43')}>
+                          gana
+                        </li>    
+                        <li className={classes.words} onClick={wordFunction('ganaría', 'h43')}>
+                          ganaría
+                        </li>
+                      </ul>
+                      <ul  className={classes.listas4} style={{margin:"12px"}} >
+                        <li className={classes.words} onClick={wordFunction('juntaría', 'h44')}>
+                          juntaría  
+                        </li>  
+                        <li className={classes.words} onClick={wordFunction('junto', 'h44')}>
+                          junto
+                        </li>    
+                        <li className={classes.words} onClick={wordFunction('juntaré', 'h44')}>
+                          juntaré
+                        </li>  
+                      </ul>
+                    </div>
                   </Grid>
                 </Grid>
               </Card>
@@ -121,7 +149,7 @@ const Level3 = () => {
                 Volver
               </Button>
 
-              <Button size="large" variant="contained" color="secondary" onClick={solve}>
+              <Button size="large" variant="contained" color="secondary" onClick={clickFunction}>
                 {answer}
               </Button>
             </Grid>
