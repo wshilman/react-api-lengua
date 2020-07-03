@@ -7,6 +7,6 @@ module.exports = (app) => {
    }));
    app.post('/api/users/create', usersController.create);
    app.get('/api/users/list', usersController.list);
-   app.get('/api/users/find', usersController.find);
+   app.post('/api/users/find', usersController.find);
 
 };
