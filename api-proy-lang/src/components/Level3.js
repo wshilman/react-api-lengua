@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React, { useState, Fragment } from "react";
 import Card from "@material-ui/core/Card";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Grid from "@material-ui/core/Grid";
@@ -16,7 +16,11 @@ const Level3 = () => {
 
   var start = Date.now();
 
+  var points = sessionStorage.getItem("SesStorPuntaje");
+
   const [answer, setAnswer] = React.useState("Validar");
+
+  const [flagEndGame, setFlagEndGame] = useState(false);
 
   const wordFunction = (word, id) => {
     return function (e) {
@@ -37,10 +41,18 @@ const Level3 = () => {
       d === "juntaré" 
     ) {
       setAnswer("Correcto!");
-      sessionStorage.setItem(
-        "SesStorPuntaje",
-        Math.trunc(100 - Math.floor((Date.now() - start) / 1000))
-      );
+      if (flagEndGame === false) {
+        /*Sumamos los puntos actuales de la session mas los nuevos */
+        points =
+          parseInt(points) +
+          Math.trunc(100 - Math.floor((Date.now() - start) / 1000));
+
+        /*Asignamos los puntos calculados a la session*/
+        sessionStorage.setItem("SesStorPuntaje", points);
+
+        /*cambiamos el estado para que no sume muchas veces al apretar "Validar" */
+        setFlagEndGame(!flagEndGame);
+      }
     } else {
       setAnswer("Incorrecto");
     }
