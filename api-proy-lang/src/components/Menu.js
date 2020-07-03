@@ -22,12 +22,14 @@ function Menu() {
   //TODOS LOS ESTILOS ESTÁN ACÁ...
   const classes = useStyles();
 
-  sessionStorage.setItem("BotonFinalizar", false);
 
   const createUserData = async () => {
 
-    if(!sessionStorage.getItem("BotonFinalizar")){
+    let didEnd = sessionStorage.getItem("SesStorJuegoFinalizado")
+    
+    if (didEnd==="False") {
 
+      console.log("------------")
 
     let user = {
       firstName: sessionStorage.getItem("SesStorNombre"),
@@ -44,8 +46,10 @@ function Menu() {
       console.log("Error al crear el usuario")
 
     }
-    sessionStorage.setItem("BotonFinalizar", true);
+    sessionStorage.setItem("SesStorJuegoFinalizado", "True");
+
   }
+  
     
   }
 

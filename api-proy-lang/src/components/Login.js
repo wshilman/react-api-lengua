@@ -31,6 +31,7 @@ function Login() {
   sessionStorage.setItem("SesStorNombre", state.stateNombre);
   sessionStorage.setItem("SesStorApellido", state.stateApellido);
   sessionStorage.setItem("SesStorPuntaje", "0");
+  sessionStorage.setItem("SesStorJuegoFinalizado", "False");
   //alert(str);
 
   const findUserData = async () => {
