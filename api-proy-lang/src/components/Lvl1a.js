@@ -33,11 +33,11 @@ const Lvl1a = () => {
     const e = document.getElementById("h45").innerText; 
 
     if (
-      a == "contento" && 
-      b == "pesado" && 
-      c == "ruidoso" && 
-      d == "sorprendido" && 
-      e == "marrón"
+      a === "contento" && 
+      b === "pesado" && 
+      c === "ruidoso" && 
+      d === "sorprendido" && 
+      e === "marrón"
     ) {
       setAnswer("Correcto!");
       sessionStorage.setItem(
@@ -66,9 +66,14 @@ const Lvl1a = () => {
             <Grid item xs={12} sm={6} md={4}>
               <Card className={classes.card} style={{backgroundColor:"#AED581"}}>
                 <h2 style={{textAlign:"center"}}> Completá el cuento </h2>
-                <p style={{textAlign:"center", margin:"0"}}> A tu derecha tenés uun montón de palabras....
-                alguien que redacte esto mejor... 
-                </p>
+                  <p style={{textAlign:"center", margin:"0"}}> A tu derecha tenés un cuneto al que le faltan algunas 
+                    palabras, completá el cuento con las palabras que correspondan. 
+                  </p>
+                  <br />
+                  <p style={{ textAlign: "center", margin: "0" }}>
+                    ¿ Te Animás ?
+                  </p>
+                <br />
               </Card>
             </Grid>
             {/* carta con el juego */}

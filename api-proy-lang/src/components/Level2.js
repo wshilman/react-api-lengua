@@ -88,6 +88,7 @@ const Level2 = () => {
                 <p style={{textAlign:"center", margin:"0"}}>
                   Identificá las palabras escritas correctamente.
                 </p>
+                <br />
                 <p style={{textAlign:"center", margin:"0"}}>
                   ¿ Te Animás ?
                 </p>
@@ -235,7 +236,7 @@ const Level2 = () => {
             </Grid>
 
             <Grid item xs={12} sm={12} md={12} className={classes.navButtons}>
-              <Button size="large" variant="contained" color="secondary" component={Link} to="/menu">
+              <Button size="large" variant="contained" color="secondary" component={Link} to="/game1">
                 Volver
               </Button>
 

@@ -35,13 +35,13 @@ const Lvl2a = () => {
     const g = document.getElementById("h47").innerText; 
     
     if (
-      a == "carnívoro" && 
-      b == "adaptable" && 
-      c == "largo" && 
-      d == "ágil" && 
-      e == "silencioso" && 
-      f == "depredador" && 
-      g == "solitario" 
+      a === "carnívoro" && 
+      b === "adaptable" && 
+      c === "largo" && 
+      d === "ágil" && 
+      e === "silencioso" && 
+      f === "depredador" && 
+      g === "solitario" 
     ) {
       setAnswer("Correcto!");
       sessionStorage.setItem(
@@ -70,9 +70,14 @@ const Lvl2a = () => {
             <Grid item xs={12} sm={6} md={4}>
               <Card className={classes.card} style={{backgroundColor:"#DCE775"}}>
                 <h2 style={{textAlign:"center"}}> Completá el cuento </h2>
-                <p style={{textAlign:"center", margin:"0"}}> A tu derecha tenés uun montón de palabras....
-                alguien que redacte esto mejor... 
-                </p>
+                  <p style={{textAlign:"center", margin:"0"}}> A tu derecha tenés un cuneto al que le faltan algunas 
+                    palabras, completá el cuento con las palabras que correspondan. 
+                  </p>
+                  <br />
+                  <p style={{ textAlign: "center", margin: "0" }}>
+                    ¿ Te Animás ?
+                  </p>
+                <br />
               </Card>
             </Grid>
             {/* carta con el juego */}
@@ -156,7 +161,7 @@ const Lvl2a = () => {
             </Grid>
 
             <Grid item xs={12} sm={12} md={12} className={classes.navButtons}>
-              <Button size='large' variant='contained' color='secondary' component={Link}to="/menu"> 
+              <Button size='large' variant='contained' color='secondary' component={Link}to="/level1adj"> 
                 Volver 
               </Button>
 

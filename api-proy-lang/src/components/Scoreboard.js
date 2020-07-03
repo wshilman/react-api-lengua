@@ -1,11 +1,9 @@
 import React, { Fragment, useEffect, useState } from 'react'
-import { makeStyles } from '@material-ui/core'
 import { listUsers } from '../controllers/gamescoreAPI'
 import CssBaseline from '@material-ui/core/CssBaseline'
 import Navbar from './Navbar'
 import Hero from './Hero'
 import Footer from './Footer'
-import Background from "../images/background_image.jpg"
 import Grid from '@material-ui/core/Grid'
 import Table from '@material-ui/core/Table'
 import TableBody from '@material-ui/core/TableBody'
@@ -14,20 +12,8 @@ import TableContainer from '@material-ui/core/TableContainer'
 import TableHead from '@material-ui/core/TableHead'
 import TableRow from '@material-ui/core/TableRow'
 import Paper from '@material-ui/core/Paper'
+import { useStyles } from "./styles.js";
 
-
-const useStyles= makeStyles({
-  mainGrid:{
-    paddingTop: '80px',
-    paddingBottom: '80px',
-    backgroundImage: 'url(' + Background + ')',
-    height:'100%',
-    justifyContent: "center"
-  },
-  table: {
-    minWidth: 200
-  } 
-})
 
 
 const Scoreboard = () => {
@@ -55,45 +41,44 @@ const Scoreboard = () => {
 
   // Handlers
 
-
-
-
+  
   return (
     <Fragment>
 
       <CssBaseline />
       <Navbar />
 
-      <main>
+      <main style={{backgroundColor:"#ccffff"}}>
         <Hero textLine='Tabla de Puntajes'/>
+        <br />
 
-        <Grid container className={classes.mainGrid} spacing={1}>
+        <Grid container className={classes.mainGrid2} style={{justifyContent:"center"}} spacing={1}>
 
-          <Grid item xs={6} sm={6} md={4} lg={4}>
+          <Grid item xs={8} sm={8} md={6} lg={6}>
           
             <TableContainer component={Paper}>
               <Table className={classes.table} aria-label="simple table">
                 <TableHead>
-                  <TableRow>
-                    <TableCell style={{fontWeight:"bolder"}}>Nombre</TableCell>
-                    <TableCell align="right" style={{fontWeight:"bolder"}}>Puntaje</TableCell>
+                  <TableRow style={{backgroundColor:"#FFCA28"}}>
+                    <TableCell align="center" style={{fontWeight:"bolder", fontSize:"larger"}}>NOMBRE</TableCell>
+                    <TableCell align="center" style={{fontWeight:"bolder", fontSize:"larger"}}>PUNTAJE</TableCell>
                   </TableRow>
                 </TableHead>
                 <TableBody>
                   {userData.map((row) => (
                     <TableRow key={row.id}>
-                      <TableCell component="th" scope="row">
+                      <TableCell style={{backgroundColor:"#FFE082"}} component="th" scope="row">
                         {row.firstName+" "+row.lastName}
                       </TableCell>
-                      <TableCell align="right">{row.score}</TableCell>
+                      <TableCell style={{backgroundColor:"#FFE082"}} align="right">
+                        {row.score}
+                      </TableCell>
                     </TableRow>
                   ))}
                 </TableBody>
               </Table>
             </TableContainer>  
-
           </Grid>
-
         </Grid>
 
       </main>
@@ -101,8 +86,6 @@ const Scoreboard = () => {
       <Footer />
     </Fragment>
   )
-
-
 }
 
 export default Scoreboard

@@ -1,4 +1,4 @@
-import React, { useState, Fragment } from "react";
+import React, { Fragment } from "react";
 import Card from "@material-ui/core/Card";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Grid from "@material-ui/core/Grid";
@@ -31,10 +31,10 @@ const Level3 = () => {
     const d = document.getElementById("h44").innerText;
 
     if (
-      a == "estudian" && 
-      b == "fuimos" && 
-      c == "ganaba" && 
-      d == "juntaré" 
+      a === "estudian" && 
+      b === "fuimos" && 
+      c === "ganaba" && 
+      d === "juntaré" 
     ) {
       setAnswer("Correcto!");
       sessionStorage.setItem(
@@ -61,15 +61,12 @@ const Level3 = () => {
             {/* carta con información */}
             <Grid item xs={12} sm={12} md={4}>
               <Card className={classes.card} style={{backgroundColor:"tomato"}}>
-                <h2 style={{textAlign:"center"}}> 
-                  BLABALABALABLA
-                </h2>
-                <p style={{textAlign:"center", margin:"0"}}>
-                  {" "}
-                  ballbabla
+                <h2 style={{textAlign:"center"}}> Completá las oraciones </h2>
+                <p style={{textAlign:"center", margin:"0"}}> A tu derecha tenés cuatro oraciones en distintos tiempos 
+                  verbales, completalas con las palabras que correspondan.
                 </p>
-                <p></p>
-                <p style={{textAlign:"center", margin:"0"}}>
+                <br />
+                <p style={{ textAlign: "center", margin: "0" }}>
                   ¿ Te Animás ?
                 </p>
                 <br />
@@ -145,12 +142,16 @@ const Level3 = () => {
             </Grid>
 
             <Grid item xs={12} sm={12} md={12} className={classes.navButtons}>
-              <Button size="large" variant="contained" color="secondary" component={Link} to="/menu">
+              <Button size="large" variant="contained" color="secondary" component={Link} to="/level2">
                 Volver
               </Button>
 
               <Button size="large" variant="contained" color="secondary" onClick={clickFunction}>
                 {answer}
+              </Button>
+
+              <Button size="large" variant="contained" color="secondary" component={Link} to="/menu">
+                Ir al menu
               </Button>
             </Grid>
           </Grid>

@@ -94,6 +94,7 @@ const Game1 = () => {
                 <p style={{textAlign:"center", margin:"0"}}>
                   Identificá las imágenes y marcá las acciones.
                 </p>
+                <br />
                 <p style={{textAlign:"center", margin:"0"}}>
                   ¿ Te Animás ? 
                 </p>

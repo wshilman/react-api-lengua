@@ -76,13 +76,22 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.background.paper,
     padding: theme.spacing(6),
   },
-
   mainGrid: {
     paddingTop: "80px",
     paddingBottom: "80px",
     backgroundImage: "url(" + Background + ") ",
     height: "100%",
   },
+  mainGrid2: {
+    paddingTop: "80px",
+    paddingBottom: "80px",
+    backgroundImage: "url(" + Background + ") ",
+    height: "100%",
+    justifyContent: "center",
+  },
+  table: {
+    minWidth: "200",
+  }, 
   navButtons: {
     display: "flex",
     justifyContent: "space-around",

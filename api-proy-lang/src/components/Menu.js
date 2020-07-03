@@ -10,7 +10,7 @@ import Typography from "@material-ui/core/Typography";
 import Container from "@material-ui/core/Container";
 import VerbosImg from "../images/verbos.jpg";
 import adjetivos from "../images/adjetivos.png";
-import sustantivos from "../images/sustantivos.jpg";
+import clectora from "../images/clectora.jpg";
 import Navbar from "../components/Navbar.js";
 import { Link } from "react-router-dom";
 import { useStyles } from "./styles.js";
@@ -52,9 +52,8 @@ function Menu() {
                     Los verbos son palabras que expresan la acción que ejecuta
                     el sujeto, o el estado o proceso en el que se encuentra. Por
                     ello, siempre concuerdan con el sujeto en persona y número.
-                    Los verbos son el núcleo del predicado. Además, pueden ir
-                    acompañados de complementos que añadan información sobre
-                    cómo ocurre la acción o qué elementos involucra.
+                    Además, pueden ir acompañados de complementos que añadan 
+                    información sobre cómo ocurre la acción o qué elementos involucra.
                   </Typography>
                 </CardContent>
                 <CardActions style={{ alignSelf: "center" }}>
@@ -109,7 +108,7 @@ function Menu() {
               <Card className={classes.card}>
                 <CardMedia
                   className={classes.cardMedia}
-                  image={sustantivos}
+                  image={clectora}
                   title="Image title"
                 />
                 <CardContent className={classes.cardContent}>
