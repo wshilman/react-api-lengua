@@ -10,6 +10,7 @@ import AvatarImg from "../images/logo_monster.png";
 import { Copyright } from "../components/Copyright.jsx";
 import { useStyles } from "../components/styles.js";
 import { Link } from "react-router-dom";
+import { findUser } from '../controllers/gamescoreAPI';
 
 function Login() {
   const classes = useStyles();

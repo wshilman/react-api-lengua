@@ -16,10 +16,38 @@ import { Link } from "react-router-dom";
 import { useStyles } from "./styles.js";
 import Footer from "./Footer";
 import Hero from "./Hero";
+import { createUser } from '../controllers/gamescoreAPI';
 
 function Menu() {
   //TODOS LOS ESTILOS ESTÁN ACÁ...
   const classes = useStyles();
+
+  sessionStorage.setItem("BotonFinalizar", false);
+
+  const createUserData = async () => {
+
+    if(!sessionStorage.getItem("BotonFinalizar")){
+
+
+    let user = {
+      firstName: sessionStorage.getItem("SesStorNombre"),
+      lastName: sessionStorage.getItem("SesStorApellido"),
+      score: parseInt(sessionStorage.getItem("SesStorPuntaje")) 
+    }
+
+    const userDataAPI = await createUser(user)
+
+    console.log(userDataAPI)
+
+    if(userDataAPI === 404 || userDataAPI === 201){
+
+      console.log("Error al crear el usuario")
+
+    }
+    sessionStorage.setItem("BotonFinalizar", true);
+  }
+    
+  }
 
   return (
     <React.Fragment>
@@ -150,8 +178,9 @@ function Menu() {
           size="large"
           variant="contained"
           color="secondary"
+          onClick={createUserData}
           component={Link}
-          to="/Score"
+          to="/Scoreboard"
         >
           {" "}
           Finalizar Juego
