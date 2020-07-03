@@ -145,6 +145,19 @@ function Menu() {
           </Grid>
         </Container>
       </main>
+
+      <Grid item xs={12} sm={12} md={12} className={classes.navButtons}>
+        <Button
+          size="large"
+          variant="contained"
+          color="secondary"
+          component={Link}
+          to="/Score"
+        >
+          {" "}
+          Finalizar Juego
+        </Button>
+      </Grid>
       <Footer />
     </React.Fragment>
   );
