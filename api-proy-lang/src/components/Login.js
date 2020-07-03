@@ -23,7 +23,9 @@ function Login() {
     stateApellido: "",
   });
 
-  //var str = $("#Nombre").val();npm
+  //Borra todos los datos de sessionStorage
+  sessionStorage.clear();
+
   // Save data to sessionStorage
   sessionStorage.setItem("SesStorNombre", state.stateNombre);
   sessionStorage.setItem("SesStorApellido", state.stateApellido);
