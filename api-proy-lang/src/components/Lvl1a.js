@@ -1,4 +1,4 @@
-import React, { useState, Fragment } from "react";
+import React, { Fragment } from "react";
 import Card from "@material-ui/core/Card";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Grid from "@material-ui/core/Grid";
@@ -15,13 +15,39 @@ const Lvl1a = () => {
     //TODOS LOS ESTILOS ESTÁN ACÁ...
   const classes = useStyles();
 
+  var start = Date.now();
 
-  //NO SE PORQUE NO ANDA, DEBE SER MÁS COMPLEJO...ESTO DEBERÍA CAMBIAR EL CONTENIDO DEL TEXTO 
-  const random = function (word, id) {
-    //document.getElementById(id).innerText = word;
+  const [answer, setAnswer] = React.useState("Validar");
 
+  const wordFunction = (word, id) => {
+    return function (e) {
+      document.getElementById(id).innerText = word;
+    }
+  };
+
+  const clickFunction = function () {
+    const a = document.getElementById("h41").innerText;
+    const b = document.getElementById("h42").innerText;
+    const c = document.getElementById("h43").innerText;
+    const d = document.getElementById("h44").innerText;
+    const e = document.getElementById("h45").innerText; 
+
+    if (
+      a == "contento" && 
+      b == "pesado" && 
+      c == "ruidoso" && 
+      d == "sorprendido" && 
+      e == "marrón"
+    ) {
+      setAnswer("Correcto!");
+      sessionStorage.setItem(
+        "SesStorPuntaje",
+        Math.trunc(100 - Math.floor((Date.now() - start) / 1000))
+      );
+    } else {
+      setAnswer("Incorrecto");
+    }
   }
-
 
 
   return (
@@ -50,56 +76,56 @@ const Lvl1a = () => {
               <Card className={classes.card} style={{backgroundColor:"#FFCC80"}}>
                 <Grid container justify="center" alignItems="stretch">
                   <Grid item xs={12} sm={12} md={6} style={{backgroundColor:"#FFF59D"}}> 
-                    <p style={{textAlign:"justify", margin:"5px"}}> En su cumpleaños, Ariel recibió muy <h4 id="h41" className={classes.h4}>??????</h4> su regalo. <br />
-                      - "<b>Por lo <h4 id="h42" className={classes.h4}>??????</h4> debe ser un auto a control remoto</b>", pensó.
-                      Pero después de sacudir un poco el regalo notó que éste no era para nada <h4 id="h43" className={classes.h4}>??????</h4>. <br /> 
+                    <p style={{textAlign:"justify", margin:"5px"}}> En su cumpleaños, Ariel recibió muy <p id="h41" className={classes.h4}>??????</p> su regalo. <br />
+                      - "<b>Por lo <p id="h42" className={classes.h4}>??????</p> debe ser un auto a control remoto</b>", pensó.
+                      Pero después de sacudir un poco el regalo notó que éste no era para nada <p id="h43" className={classes.h4}>??????</p>. <br /> 
                       - "<b>Debe ser un muñeco de peluche!</b>", volvió a pensar Ariel. <br />
                       - "<b>Por qué no lo abrís, Ari?</b>", le dijo la mamá. "<b>Que todavía tenés que abrir otros regalos</b>". <br />
-                      Ariel abrió la tapa y <h4 id="h44" className={classes.h4}>??????</h4> vió 
-                      que adentro se encontraba un oso grande <h4 id="h45" className={classes.h4}>??????</h4> de peluche como él tanto quería. 
+                      Ariel abrió la tapa y <p id="h44" className={classes.h4}>??????</p> vió 
+                      que adentro se encontraba un oso grande <p id="h45" className={classes.h4}>??????</p> de peluche como él tanto quería. 
                     </p>
                   </Grid>
                   <Grid item xs={12} sm={12} md={6} style={{margin:"auto"}}> 
-                      <ul id="ul1" className={classes.listas2} style={{margin:"12px"}}>
-                        <li className={classes.words} onClick={random("CONTENTO", "h41")}>
-                          CONTENTO  
-                        </li>
-                        <li className={classes.words} onClick={random("ASUSTADO", "h41")}>
-                          asustado 
-                        </li> 
-                      </ul>
-                      <ul id="ul2" className={classes.listas2} style={{margin:"12px"}} >
-                        <li className={classes.words} onClick={random("MELANCÓLICO", "h42")}>
-                          melancólico 
-                        </li>  
-                        <li className={classes.words} onClick={random("PESADO", "h42")}>
-                          PESADO
-                        </li>  
-                      </ul>
-                      <ul id="ul3" className={classes.listas2} style={{margin:"12px"}} >
-                        <li className={classes.words} onClick={random("TRANQUILOS", "h43")}>
-                          tranquilos 
-                        </li>  
-                        <li className={classes.words} onClick={random("RUIDOSO", "h43")}>
-                          RUIDOSO
-                        </li>  
-                      </ul>
-                      <ul id="ul4" className={classes.listas2} style={{margin:"12px"}} >
-                        <li className={classes.words} onClick={random("SORPRENDIDO", "h44")}>
-                          SORPRENDIDO  
-                        </li>  
-                        <li className={classes.words} onClick={random("VELOZ", "h44")}>
-                          veloz
-                        </li>  
-                      </ul>
-                      <ul id="ul5" className={classes.listas2} style={{margin:"12px"}} >
-                        <li className={classes.words} onClick={random("MARRÓN", "h45")}>
-                          MARRÓN 
-                        </li>  
-                        <li className={classes.words} onClick={random("HIPERACTIVO", "h45")}>
-                          hiperactivo
-                        </li>  
-                      </ul>
+                    <ul className={classes.listas2} style={{margin:"12px"}}>
+                      <li className={classes.words} onClick={wordFunction('contento', 'h41')}>
+                        contento  
+                      </li>
+                      <li className={classes.words} onClick={wordFunction('asustado', 'h41')}>
+                        asustado 
+                      </li> 
+                    </ul>
+                    <ul className={classes.listas2} style={{margin:"12px"}} >
+                      <li className={classes.words} onClick={wordFunction('melancólico', 'h42')}>
+                        melancólico 
+                      </li>  
+                      <li className={classes.words} onClick={wordFunction('pesado', 'h42')}>
+                        pesado
+                      </li>  
+                    </ul>
+                    <ul className={classes.listas2} style={{margin:"12px"}} >
+                      <li className={classes.words} onClick={wordFunction('tranquilos', 'h43')}>
+                        tranquilos 
+                      </li>  
+                      <li className={classes.words} onClick={wordFunction('ruidoso', 'h43')}>
+                        ruidoso
+                      </li>  
+                    </ul>
+                    <ul  className={classes.listas2} style={{margin:"12px"}} >
+                      <li className={classes.words} onClick={wordFunction('sorprendido', 'h44')}>
+                        sorprendido  
+                      </li>  
+                      <li className={classes.words} onClick={wordFunction('veloz', 'h44')}>
+                        veloz
+                      </li>  
+                    </ul>
+                    <ul className={classes.listas2} style={{margin:"12px"}} >
+                      <li className={classes.words} onClick={wordFunction('marrón', 'h45')}>
+                        marrón 
+                      </li>  
+                      <li className={classes.words} onClick={wordFunction('hiperactivo', 'h45')}>
+                        hiperactivo
+                      </li>  
+                    </ul>
                   </Grid>
                 </Grid>
 
@@ -111,8 +137,8 @@ const Lvl1a = () => {
                 Volver 
               </Button>
 
-              <Button size='large' variant='contained' color='secondary'> 
-                answer
+              <Button size='large' variant='contained' color='secondary' onClick={clickFunction}> 
+                {answer}
               </Button>
                     
               <Button size='large' variant='contained' color='secondary' component={Link}to="/level2adj"> 

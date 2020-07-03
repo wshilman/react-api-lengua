@@ -86,10 +86,8 @@ const Level2 = () => {
                   Elegí las correctas 
                 </h2>
                 <p style={{textAlign:"center", margin:"0"}}>
-                  {" "}
-                  Identifica las palabras escritas correctamente.
+                  Identificá las palabras escritas correctamente.
                 </p>
-                <p></p>
                 <p style={{textAlign:"center", margin:"0"}}>
                   ¿ Te Animás ?
                 </p>
