@@ -29,7 +29,7 @@ export default function ButtonAppBar() {
         </Typography>
         <Button className={classes.pinkhover} component={Link} to="/score">
           <p style={{color:"white", fontWeight:"bold"}}> 
-            PUNTOS: 
+            PUNTOS:
           </p>
           <div style={{fontWeight:"bold"}}> {puntajeFromSession} </div>
         </Button>

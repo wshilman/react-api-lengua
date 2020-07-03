@@ -27,12 +27,12 @@ export const createUser = async function (user) {
   }
   catch (e) {
       console.log(e)
-      return "404"
+      return 404
   }
 }
 
-export const getUser = async function (user) {
-  let url = urlWebServices.getUser;
+export const findUser = async function (user) {
+  let url = urlWebServices.findUser;
   try {
       let response = await fetch(url, {
           method: 'POST',
@@ -57,11 +57,11 @@ export const getUser = async function (user) {
   }
   catch (e) {
       console.log(e)
-      return "404"
+      return 404
   }
 }
 
-export const listUsers = async function (user) {
+export const listUsers = async function () {
   let url = urlWebServices.listUsers;
   try {
       let response = await fetch(url, {
@@ -83,6 +83,6 @@ export const listUsers = async function (user) {
   }
   catch (e) {
       console.log(e)
-      return "404"
+      return 404
   }
 }

@@ -12,6 +12,7 @@ import Lvl2CL from "./components/Lvl2CL.js";
 import Lvl3CL from "./components/Lvl3CL.js";
 import Score from "./components/Score.js";
 import { Switch, Route, BrowserRouter } from "react-router-dom";
+import Scoreboard from "./components/Scoreboard.js";
 
 const App = () => {
   return (
@@ -29,6 +30,7 @@ const App = () => {
         <Route path="/Lvl1CL" component={Lvl1CL} />
         <Route path="/Lvl2CL" component={Lvl2CL} />
         <Route path="/Lvl3CL" component={Lvl3CL} />
+        <Route path="/scoreboard" component={Scoreboard} />
       </Switch>
     </BrowserRouter>
   );
