@@ -180,7 +180,7 @@ function Menu() {
           color="secondary"
           onClick={createUserData}
           component={Link}
-          to="/Scoreboard"
+          to="/scoreboard"
         >
           {" "}
           Finalizar Juego

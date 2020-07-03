@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React, { useState, Fragment } from "react";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Checkbox from "@material-ui/core/Checkbox";
 import { Button, Card } from "@material-ui/core";
@@ -18,6 +18,7 @@ const Lvl2CL = () => {
   const classes = useStyles();
 
   var start = Date.now();
+  var points = sessionStorage.getItem("SesStorPuntaje");
 
   const [answer, setAnswer] = React.useState("Validar");
 
@@ -28,6 +29,7 @@ const Lvl2CL = () => {
     checkedJ: false,
     checkedK: false,
   });
+  const [flagEndGame, setFlagEndGame] = useState(false);
 
   const handleChange = (event) => {
     setState({ ...state, [event.target.name]: event.target.checked });
@@ -43,10 +45,18 @@ const Lvl2CL = () => {
     ) {
       document.getElementById("right1").style.backgroundColor = "#8BC34A";
       setAnswer("Correcto!");
-      sessionStorage.setItem(
-        "SesStorPuntaje",
-        Math.trunc(100 - Math.floor((Date.now() - start) / 1000))
-      );
+      if (flagEndGame === false) {
+        /*Sumamos los puntos actuales de la session mas los nuevos */
+        points =
+          parseInt(points) +
+          Math.trunc(100 - Math.floor((Date.now() - start) / 1000));
+
+        /*Asignamos los puntos calculados a la session*/
+        sessionStorage.setItem("SesStorPuntaje", points);
+
+        /*cambiamos el estado para que no sume muchas veces al apretar "Validar" */
+        setFlagEndGame(!flagEndGame);
+      }
     } else {
       setAnswer("Incorrecto");
     }
